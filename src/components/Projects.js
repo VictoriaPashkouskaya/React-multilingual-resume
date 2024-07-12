@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const ProjectsWrapper = styled.div`
   margin-bottom: 20px;
+  background-color: #f2f2f2;
 `;
 
 const Projects = () => {

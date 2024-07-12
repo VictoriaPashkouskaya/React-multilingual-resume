@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const HeaderWrapper = styled.header`
   text-align: center;
   margin-bottom: 20px;
+  background-color: #f2f2f2;
 `;
 
 const Header = () => {

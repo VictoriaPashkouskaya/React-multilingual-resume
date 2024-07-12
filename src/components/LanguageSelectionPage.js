@@ -1,4 +1,3 @@
-// src/components/LanguageSelectionPage.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -13,7 +12,7 @@ const LanguageSelectionWrapper = styled.div`
 `;
 
 const Button = styled.button`
-  margin: 10px 0;
+  margin: 10px;
   padding: 10px 20px;
   border: none;
   background-color: #007acc;
@@ -21,8 +20,20 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
   &:hover {
     background-color: #005ea3;
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #005ea3;
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 `;
 
