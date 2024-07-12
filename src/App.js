@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import Header from './components/Header';
+import Contacts from './components/Contacts';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import LanguageSelector from './components/LanguageSelector';
+import LanguageSelectionPage from './components/LanguageSelectionPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const AppWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+`;
+
+const Resume = () => (
+  <AppWrapper>
+    <LanguageSelector />
+    <Header />
+    <Contacts />
+    <Projects />
+    <Skills />
+  </AppWrapper>
+);
+
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<LanguageSelectionPage />} />
+      <Route path="/resume" element={<Resume />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
+
+
