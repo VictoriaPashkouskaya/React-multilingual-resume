@@ -1,13 +1,55 @@
-// src/components/Header.js
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
+
+const StyledHeader = styled.header`
+  .card-body {
+    padding: 3rem !important;
+
+    @media (max-width: 768px) {
+      padding: 2rem !important;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.5rem !important;
+    }
+  }
+
+  h1.display-3 {
+    font-size: 4rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p.lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+`;
 
 const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="container my-5">
+    <StyledHeader className="container my-5">
       <div
         className="card mx-auto shadow-lg rounded-5 overflow-hidden"
         style={{
@@ -39,30 +81,31 @@ const Header = () => {
             {t('header.name')}
           </h1>
 
-          <p className="lead text-dark mb-3" style={{ lineHeight: 1.8 }}>
+          <p className="lead text-dark mb-3">
             {t('header.intro')}
             <span className="fw-bold text-danger">{t('header.systems')}</span>.
           </p>
 
-          <p className="lead text-dark mb-3" style={{ lineHeight: 1.8 }}>
+          <p className="lead text-dark mb-3">
             {t('header.skills_intro')}
             <span className="fw-bold text-danger">{t('header.skills_list')}</span>
             {t('header.version_control')}
             <span className="fw-bold text-danger">{t('header.git')}</span>.
           </p>
 
-          <p className="lead text-dark mb-3" style={{ lineHeight: 1.8 }}>
+          <p className="lead text-dark mb-3">
             {t('header.expertise_intro')}
             <span className="fw-bold text-danger">{t('header.expertise_list')}</span>
           </p>
 
-          <p className="lead text-dark mb-0" style={{ lineHeight: 1.8 }}>
+          <p className="lead text-dark mb-0">
             {t('header.focus')}
           </p>
         </div>
       </div>
-    </header>
+    </StyledHeader>
   );
 };
 
 export default Header;
+
