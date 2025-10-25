@@ -6,15 +6,30 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
-      "header": "Welcome to My Resume",
+      "header": {
+        name: "Viktoriya Pashkouskaya",
+        intro: "IT technician with experience in ",
+        systems: "Windows and Linux",
+        skills_intro: "Knowledge of ",
+        skills_list: "HTML, CSS, JavaScript, React",
+        version_control: " and version control systems ",
+        git: "Git, GitHub",
+        expertise_intro: "Skilled in ",
+        expertise_list: "technical support, digital document management, hardware and peripherals maintenance, and creating professional presentations using PowerPoint, Canva, and Figma.",
+        focus: "Focused on incident resolution, system performance optimization,"
+      },
       "selectLanguage": "Select your preferred language",
-      "contacts.title": "Contacts",
-      "contacts.email": "Email",
-      "contacts.phone": "Phone",
-      "contacts.github": "GitHub",
-      "projects.title": "Projects",
-      "projects.description1": "Project 1 description",
-      "projects.description2": "Project 2 description",
+      "contacts": {
+        "title": "Contacts",
+        "email": "Email",
+        "phone": "Phone",
+        "github": "GitHub"
+      },
+      "projects": {
+        "title": "Projects",
+        "description1": "Project 1 description",
+        "description2": "Project 2 description"
+      },
       "skills": {
         "title": "Skills",
         "categoryDigital": "Digital / Technical",
@@ -38,7 +53,6 @@ const resources = {
           "teamwork": "Communication and teamwork: coordination with users and technical departments."
         },
         "social": {
-          "teamwork": "Communication and teamwork: coordination with users and technical departments.",
           "teamwork": "Teamwork and collaboration in academic and work projects.",
           "leadership": "Leadership and task coordination.",
           "communication": "Clear and effective communication.",
@@ -51,15 +65,30 @@ const resources = {
 
   ru: {
     translation: {
-      "header": "Добро пожаловать в мое резюме",
+      "header": {
+        "name": "Виктория Пашковская",
+        "intro": "Технический специалист с опытом работы в ",
+        "systems": "Windows и Linux",
+        "skills_intro": "Знания в области ",
+        "skills_list": "HTML, CSS, JavaScript, React",
+        "version_control": " и системах контроля версий ",
+        "git": "Git, GitHub",
+        "expertise_intro": "Опыт в ",
+        "expertise_list": "технической поддержке, цифровом документообороте, обслуживании оборудования и периферии, а также создании профессиональных презентаций с PowerPoint, Canva и Figma.",
+        "focus": "Сфокусирована на решении инцидентов, оптимизации производительности системы и работе с пользователями."
+      },
       "selectLanguage": "Выберите предпочитаемый язык",
-      "contacts.title": "Контакты",
-      "contacts.email": "Эл. почта",
-      "contacts.phone": "Телефон",
-      "contacts.github": "GitHub",
-      "projects.title": "Проекты",
-      "projects.description1": "Описание проекта 1",
-      "projects.description2": "Описание проекта 2",
+      "contacts": {
+        "title": "Контакты",
+        "email": "Эл. почта",
+        "phone": "Телефон",
+        "github": "GitHub"
+      },
+      "projects": {
+        "title": "Проекты",
+        "description1": "Описание проекта 1",
+        "description2": "Описание проекта 2"
+      },
       "skills": {
         "title": "Навыки",
         "categoryDigital": "Цифровые / Технические",
@@ -83,7 +112,6 @@ const resources = {
           "teamwork": "Коммуникация и командная работа: координация с пользователями и техническими отделами."
         },
         "social": {
-          "teamwork": "Коммуникация и командная работа: координация с пользователями и техническими отделами.",
           "teamwork": "Работа в команде и сотрудничество в академических и рабочих проектах.",
           "leadership": "Лидерство и координация задач.",
           "communication": "Чёткая и эффективная коммуникация.",
@@ -96,15 +124,30 @@ const resources = {
 
   es: {
     translation: {
-      "header": "Bienvenido a mi currículum",
+      "header": {
+        "name": "Viktoriya Pashkouskaya",
+        "intro": "Técnico en informática con experiencia en ",
+        "systems": "Windows y Linux",
+        "skills_intro": "Conocimientos en ",
+        "skills_list": "HTML, CSS, JavaScript, React",
+        "version_control": " y sistemas de control de versiones ",
+        "git": "Git, GitHub",
+        "expertise_intro": "Capacitado en ",
+        "expertise_list": "soporte técnico, gestión documental digital, mantenimiento de hardware y periféricos, y creación de presentaciones profesionales con PowerPoint, Canva y Figma.",
+        "focus": "Enfocado en la resolución de incidencias, optimización del rendimiento del sistema и atención al usuario."
+      },
       "selectLanguage": "Seleccione su idioma preferido",
-      "contacts.title": "Contactos",
-      "contacts.email": "Correo electrónico",
-      "contacts.phone": "Teléfono",
-      "contacts.github": "GitHub",
-      "projects.title": "Proyectos",
-      "projects.description1": "Descripción del proyecto 1",
-      "projects.description2": "Descripción del proyecto 2",
+      "contacts": {
+        "title": "Contactos",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "github": "GitHub"
+      },
+      "projects": {
+        "title": "Proyectos",
+        "description1": "Descripción del proyecto 1",
+        "description2": "Descripción del proyecto 2"
+      },
       "skills": {
         "title": "Competencias",
         "categoryDigital": "Competencia Digital: Técnicas / Digitales",
@@ -125,9 +168,9 @@ const resources = {
           "virtualization": "Virtualización: Experiencia con VMware, VirtualBox.",
           "support": "Soporte técnico: Resolución de incidencias, asistencia remota, atención al cliente interno.",
           "projectManagement": "Gestión de proyectos: Uso de Trello, Jira para planificación y seguimiento de tareas.",
-                },
+          "teamwork": "Comunicación y trabajo en equipo: Coordinación con usuarios y departamentos técnicos."
+        },
         "social": {
-          "teamwork": "Comunicación y trabajo en equipo: Coordinación con usuarios y departamentos técnicos.",
           "teamwork": "Trabajo en equipo y colaboración en proyectos académicos y laborales.",
           "leadership": "Liderazgo y coordinación de tareas.",
           "communication": "Comunicación clara y efectiva.",
@@ -140,15 +183,30 @@ const resources = {
 
   eu: {
     translation: {
-      "header": "Ongi etorri nire curriculumean",
+      "header": {
+        name: "Viktoriya Pashkouskaya",
+        intro: "Informatika teknikaria esperientziarekin ",
+        systems: "Windows eta Linux sistemetan",
+        skills_intro: "Ezagutza hauek ditu: ",
+        skills_list: "HTML, CSS, JavaScript, React",
+        version_control: " eta bertsio-kontrol sistemetan ",
+        git: "Git, GitHub",
+        expertise_intro: "Gaitasunak ditu ",
+        expertise_list: "laguntza teknikoan, dokumentu digitalen kudeaketan, hardware eta periferikoen mantentze-lanetan, eta aurkezpen profesionalak sortzen PowerPoint, Canva eta Figma erabiliz.",
+        focus: "Arazoak konpontzera, sistemaren errendimendua hobetzeko eta erabiltzaileen arreta eskaintzera bideratua."
+      },
       "selectLanguage": "Hautatu nahiago duzun hizkuntza",
-      "contacts.title": "Kontaktua",
-      "contacts.email": "Posta elektronikoa",
-      "contacts.phone": "Telefonoa",
-      "contacts.github": "GitHub",
-      "projects.title": "Proiektuak",
-      "projects.description1": "Proiektuaren 1 deskribapena",
-      "projects.description2": "Proiektuaren 2 deskribapena",
+      "contacts": {
+        "title": "Kontaktua",
+        "email": "Posta elektronikoa",
+        "phone": "Telefonoa",
+        "github": "GitHub"
+      },
+      "projects": {
+        "title": "Proiektuak",
+        "description1": "Proiektuaren 1 deskribapena",
+        "description2": "Proiektuaren 2 deskribapena"
+      },
       "skills": {
         "title": "Gaitasunak",
         "categoryDigital": "Digitalak / Teknikoak",
@@ -168,10 +226,11 @@ const resources = {
           "databases": "Datu baseak: MySQL, MongoDB oinarrizko ezagutza.",
           "virtualization": "Birtualizazioa: VMware eta VirtualBox esperientzia.",
           "support": "Laguntza teknikoa: arazoen konponbidea, urruneko laguntza, barne bezeroen zerbitzua.",
+          "projectManagement": "Proiektu kudeaketa: Trello, Jira erabilera zereginak planifikatzeko eta jarraipena egiteko.",
+          "teamwork": "Komunikazioa eta talde lana: erabiltzaileekin eta teknikako sailen arteko koordinazioa."
         },
         "social": {
-          "projectManagement": "Proiektu kudeaketa: Trello, Jira erabilera zereginak planifikatzeko eta jarraipena egiteko.",
-          "teamwork": "Komunikazioa eta talde lana: erabiltzaileekin eta teknikako sailen arteko koordinazioa.",          "teamwork": "Talde-lana eta lankidetza ikasketa eta lan proiektuetan.",
+          "teamwork": "Talde-lana eta lankidetza ikasketa eta lan proiektuetan.",
           "leadership": "Lidergoa eta zereginak koordinatzea.",
           "communication": "Komunikazio argia eta eraginkorra.",
           "problemSolving": "Arazoak konpontzea eta gertakariak aztertzea.",
@@ -189,9 +248,7 @@ i18n
     resources,
     lng: localStorage.getItem('language') || 'en',
     fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false
-    }
+    interpolation: { escapeValue: false }
   });
 
 export default i18n;

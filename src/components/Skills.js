@@ -17,7 +17,7 @@ const float = keyframes`
 const SkillsWrapper = styled.div`
   margin: 50px auto;
   padding: 40px 30px;
-  max-width: 900px;
+  max-width: 800px;
   background: linear-gradient(135deg, #fff7e6, #ffe0b2);
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(255, 183, 77, 0.4);
@@ -30,7 +30,7 @@ const CategoryTitle = styled.h3`
   font-size: 1.6rem;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 40px;
   svg {
     animation: ${float} 3s ease-in-out infinite;
     color: #ffa500;
@@ -124,5 +124,4 @@ const Skills = () => {
     </SkillsWrapper>
   );
 };
-
 export default Skills;
