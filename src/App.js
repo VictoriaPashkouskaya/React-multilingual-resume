@@ -2,12 +2,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './components/Header';
+//import Header from './components/Header';
 import Contacts from './components/Contacts';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+//import Skills from './components/Skills';
 import LanguageSelector from './components/LanguageSelector';
 import LanguageSelectionPage from './components/LanguageSelectionPage';
+import InteractiveMenu from './components/InteractiveMenu';
 
 const AppWrapper = styled.div`
   max-width: 800px;
@@ -20,9 +21,8 @@ const Resume = () => (
   <AppWrapper>
     <LanguageSelector />
     <Contacts />
-    <Header />
+    <InteractiveMenu/>
     <Projects />
-    <Skills />
   </AppWrapper>
 );
 

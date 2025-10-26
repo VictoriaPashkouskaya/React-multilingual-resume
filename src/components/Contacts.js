@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
 import profileImage from '../img/IMG20240216124521.jpg';
 
 const ContactsWrapper = styled.div`
@@ -63,9 +63,10 @@ const Contacts = () => {
       <ProfileImage src={profileImage} alt="Profile" />
       <ContactDetails>
         <h2>{t('contacts.title')}</h2>
-        <p><FaEnvelope /> {t('contacts.email')}: your.email@example.com</p>
-        <p><FaPhone /> {t('contacts.phone')}: +1234567890</p>
-        <p><FaGithub /> {t('contacts.github')}: <a href="https://github.com/yourprofile">https://github.com/yourprofile</a></p>
+        <p><FaEnvelope /> {t('contacts.email')}: vika.pashkowskaia@ukr.net</p>
+        <p><FaPhone /> {t('contacts.phone')}: +34 624 82 36 25</p>
+        <p><FaGithub /> {t('Github')}: <a href="https://github.com/VictoriaPashkouskaya" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        <p><FaLinkedin /> {t('Linkedin')}: <a href="https://www.linkedin.com/in/victoria-pashkouskaya" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
       </ContactDetails>
     </ContactsWrapper>
   );
