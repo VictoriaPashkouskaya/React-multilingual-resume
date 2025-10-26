@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 import Header from './Header';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 import PersonalHistory from './PersonalHistory';
-import { useTranslation } from 'react-i18next';
 
 // --- Анимации ---
 const fadeIn = keyframes`
@@ -14,91 +14,64 @@ const fadeIn = keyframes`
 `;
 
 const glow = keyframes`
-  0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5); }
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5); }
 `;
 
 // --- Стили ---
 const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 950px;
-  margin: 3rem auto;
+  max-width: 900px;
+  margin: 1rem auto;
   font-family: 'Montserrat', sans-serif;
 `;
 
 const TabButtons = styled.div`
   display: flex;
-  gap: 0;
-  border-radius: 24px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 1rem;
 
   button {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.15);
-    color: #333;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 1rem 1.5rem;
+    flex: 1 1 48%;
+    padding: 0.8rem 1rem;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1rem;
     cursor: pointer;
-    position: relative;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
     border-radius: 12px;
-
-    &:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 15%;
-      right: 0;
-      width: 1px;
-      height: 70%;
-      background: rgba(255, 255, 255, 0.3);
-    }
+    background: #fff;
+    color: #000;
+    transition: all 0.25s ease;
+    position: relative;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* лёгкая тень по умолчанию */
 
     &:hover {
-      animation: ${glow} 1s infinite alternate;
-      transform: translateY(-2px) scale(1.05);
-      background: rgba(255, 255, 255, 0.25);
-      color: #000;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2), 0 0 15px rgba(255,255,255,0.3);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 13px rgba(0, 255, 255, 0.4), 0 0 25px rgba(0, 255, 255, 0.2);
     }
 
     &.active {
-      background: rgba(255, 255, 255, 0.3);
-      border-color: #fff;
-      color: #000;
-      transform: scale(1.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 20px rgba(255,255,255,0.4);
-      animation: ${glow} 1s infinite alternate;
+      animation: ${glow} 1.5s infinite alternate;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 255, 0.3);
     }
   }
 
   @media (max-width: 600px) {
     flex-direction: column;
-    gap: 12px;
-
     button {
-      width: 100%;
-      padding: 1rem;
-      &:not(:last-child)::after {
-        display: none;
-      }
+      flex: 1 1 100%;
     }
   }
 `;
 
 const SectionWrapper = styled.div`
+  animation: ${fadeIn} 0.4s ease forwards;
   overflow: hidden;
-  animation: ${fadeIn} 0.5s ease forwards;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 `;
 
 // --- Компонент ---
@@ -107,11 +80,11 @@ const InteractiveMenu = () => {
   const [activeSection, setActiveSection] = useState(null);
 
   const sections = [
-    { id: 'header', label: t('About me'), component: <Header /> },
-    { id: 'skills', label: t('Skills'), component: <Skills /> },
-    { id: 'education', label: t('Education'), component: <Education /> },
-    { id: 'experience', label: t('Experience'), component: <Experience /> },
-    { id: 'history', label: t('My history'), component: <PersonalHistory /> },
+    { id: 'header', label: t('menu.aboutMe'), component: <Header /> },
+    { id: 'skills', label: t('menu.skills'), component: <Skills /> },
+    { id: 'education', label: t('menu.education'), component: <Education /> },
+    { id: 'experience', label: t('menu.experience'), component: <Experience /> },
+    { id: 'history', label: t('menu.history'), component: <PersonalHistory /> },
   ];
 
   const handleClick = (id) => {
@@ -137,7 +110,7 @@ const InteractiveMenu = () => {
           key={id}
           style={{
             maxHeight: activeSection === id ? '1000px' : '0',
-            padding: activeSection === id ? '1rem 0' : '0',
+            padding: activeSection === id ? '0.5rem 0' : '0',
           }}
         >
           {activeSection === id && component}

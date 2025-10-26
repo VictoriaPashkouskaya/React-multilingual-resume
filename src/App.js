@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import LanguageSelector from './components/LanguageSelector';
 import LanguageSelectionPage from './components/LanguageSelectionPage';
 import InteractiveMenu from './components/InteractiveMenu';
+import Languages from './components/Languages';
 
 const AppWrapper = styled.div`
   max-width: 800px;
@@ -22,6 +23,7 @@ const Resume = () => (
     <LanguageSelector />
     <Contacts />
     <InteractiveMenu/>
+    <Languages/>
     <Projects />
   </AppWrapper>
 );

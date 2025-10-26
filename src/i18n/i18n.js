@@ -7,15 +7,15 @@ const resources = {
   en: {
     translation: {
       "header": {
-        intro: "IT technician with experience in ",
-        systems: "Windows and Linux",
-        skills_intro: "Knowledge of ",
-        skills_list: "HTML, CSS, JavaScript, React",
-        version_control: " and version control systems ",
-        git: "Git, GitHub",
-        expertise_intro: "Skilled in ",
-        expertise_list: "technical support, digital document management, hardware and peripherals maintenance, and creating professional presentations using PowerPoint, Canva, and Figma.",
-        focus: "Focused on incident resolution, system performance optimization,"
+        "intro": "IT technician with experience in ",
+        "systems": "Windows and Linux",
+        "skills_intro": "Knowledge of ",
+        "skills_list": "HTML, CSS, JavaScript, React",
+        "version_control": " and version control systems ",
+        "git": "Git, GitHub",
+        "expertise_intro": "Skilled in ",
+        "expertise_list": "technical support, digital document management, hardware and peripherals maintenance, and creating professional presentations using PowerPoint, Canva, and Figma.",
+        "focus": "Focused on incident resolution, system performance optimization,"
       },
       "selectLanguage": "Select your preferred language",
       "contacts": {
@@ -58,7 +58,18 @@ const resources = {
           "problemSolving": "Problem solving and incident analysis.",
           "planning": "Project and activity planning and organization."
         }
-      }
+      },
+      "menu": {
+        "aboutMe": "About Me",
+        "skills": "Skills",
+        "education": "Education",
+        "experience": "Experience",
+        "history": "My History"
+      },
+      "En": "EN",
+      "Ru": "RU",
+      "ES": "ES",
+      "EU": "EU"
     }
   },
 
@@ -116,7 +127,18 @@ const resources = {
           "problemSolving": "Решение проблем и анализ инцидентов.",
           "planning": "Планирование и организация проектов и мероприятий."
         }
-      }
+      },
+      "menu": {
+        "aboutMe": "Обо мне",
+        "skills": "Навыки",
+        "education": "Образование",
+        "experience": "Опыт работы",
+        "history": "Моя история"
+      },
+      "En": "EN",
+      "Ru": "RU",
+      "ES": "ES",
+      "EU": "EU"
     }
   },
 
@@ -174,22 +196,33 @@ const resources = {
           "problemSolving": "Resolución de problemas y análisis de incidencias.",
           "planning": "Planificación y organización de proyectos y actividades."
         }
-      }
+      },
+      "menu": {
+        "aboutMe": "Sobre mí",
+        "skills": "Habilidades",
+        "education": "Educación",
+        "experience": "Experiencia",
+        "history": "Mi historia"
+      },
+      "En": "EN",
+      "Ru": "RU",
+      "ES": "ES",
+      "EU": "EU"
     }
   },
 
   eu: {
     translation: {
       "header": {
-        intro: "Informatika teknikaria esperientziarekin ",
-        systems: "Windows eta Linux sistemetan",
-        skills_intro: "Ezagutza hauek ditu: ",
-        skills_list: "HTML, CSS, JavaScript, React",
-        version_control: " eta bertsio-kontrol sistemetan ",
-        git: "Git, GitHub",
-        expertise_intro: "Gaitasunak ditu ",
-        expertise_list: "laguntza teknikoan, dokumentu digitalen kudeaketan, hardware eta periferikoen mantentze-lanetan, eta aurkezpen profesionalak sortzen PowerPoint, Canva eta Figma erabiliz.",
-        focus: "Arazoak konpontzera, sistemaren errendimendua hobetzeko eta erabiltzaileen arreta eskaintzera bideratua."
+        "intro": "Informatika teknikaria esperientziarekin ",
+        "systems": "Windows eta Linux sistemetan",
+        "skills_intro": "Ezagutza hauek ditu: ",
+        "skills_list": "HTML, CSS, JavaScript, React",
+        "version_control": " eta bertsio-kontrol sistemetan ",
+        "git": "Git, GitHub",
+        "expertise_intro": "Gaitasunak ditu ",
+        "expertise_list": "laguntza teknikoan, dokumentu digitalen kudeaketan, hardware eta periferikoen mantentze-lanetan, eta aurkezpen profesionalak sortzen PowerPoint, Canva eta Figma erabiliz.",
+        "focus": "Arazoak konpontzera, sistemaren errendimendua hobetzeko eta erabiltzaileen arreta eskaintzera bideratua."
       },
       "selectLanguage": "Hautatu nahiago duzun hizkuntza",
       "contacts": {
@@ -232,7 +265,18 @@ const resources = {
           "problemSolving": "Arazoak konpontzea eta gertakariak aztertzea.",
           "planning": "Proiektu eta jardueren planifikazioa eta antolaketa."
         }
-      }
+      },
+      "menu": {
+        "aboutMe": "Ni buruz",
+        "skills": "Gaitasunak",
+        "education": "Hezkuntza",
+        "experience": "Esperientzia",
+        "history": "Nire historia"
+      },
+      "En": "EN",
+      "Ru": "RU",
+      "ES": "ES",
+      "EU": "EU"
     }
   }
 };
