@@ -35,7 +35,7 @@ const TabButtons = styled.div`
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   button {
     flex: 1;
@@ -80,16 +80,31 @@ const TabButtons = styled.div`
       animation: ${glow} 1s infinite alternate;
     }
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 12px;
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+  }
 `;
 
 const SectionWrapper = styled.div`
+  overflow: hidden;
   animation: ${fadeIn} 0.5s ease forwards;
+  transition: max-height 0.4s ease;
 `;
 
 // --- Компонент ---
 const InteractiveMenu = () => {
   const { t } = useTranslation();
-  const [activeSection, setActiveSection] = useState(null); // по умолчанию ничего не выбрано
+  const [activeSection, setActiveSection] = useState(null);
 
   const sections = [
     { id: 'header', label: t('About me'), component: <Header /> },
@@ -100,7 +115,6 @@ const InteractiveMenu = () => {
   ];
 
   const handleClick = (id) => {
-    // если уже активна — закрываем, иначе открываем
     setActiveSection(prev => (prev === id ? null : id));
   };
 
@@ -118,11 +132,17 @@ const InteractiveMenu = () => {
         ))}
       </TabButtons>
 
-      {activeSection && (
-        <SectionWrapper>
-          {sections.find(sec => sec.id === activeSection)?.component}
+      {sections.map(({ id, component }) => (
+        <SectionWrapper
+          key={id}
+          style={{
+            maxHeight: activeSection === id ? '1000px' : '0',
+            padding: activeSection === id ? '1rem 0' : '0',
+          }}
+        >
+          {activeSection === id && component}
         </SectionWrapper>
-      )}
+      ))}
     </MenuWrapper>
   );
 };
