@@ -1,30 +1,59 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-
-// Путь к изображению профиля
+import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import profileImage from '../img/IMG20240216124521.jpg';
 
 const ContactsWrapper = styled.div`
   display: flex;
-  align-items: center; /* Центрирует фото и контакты по вертикали */
+  align-items: center;
   margin-bottom: 20px;
-  background-color: #f2f2f2;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 `;
 
 const ProfileImage = styled.img`
-  width: 150px; /* Регулируйте размер изображения по вашему усмотрению */
+  width: 150px;
   height: 150px;
-  object-fit: cover; /* Сохранение пропорций и обрезка изображения */
-  margin-right: 20px; /* Отступ справа для разделения фото и контактов */
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 3px solid #1a73e8;
 `;
 
 const ContactDetails = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Выравнивание контактов по левому краю */
+  align-items: flex-start;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  p {
+    margin: 4px 0;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 6px;
+      color: #1a73e8;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg {
+      margin-right: 6px;
+      color: #1a73e8;
+    }
+  }
 `;
 
 const Contacts = () => {
@@ -34,12 +63,13 @@ const Contacts = () => {
       <ProfileImage src={profileImage} alt="Profile" />
       <ContactDetails>
         <h2>{t('contacts.title')}</h2>
-        <p>{t('contacts.email')}: your.email@example.com</p>
-        <p>{t('contacts.phone')}: +1234567890</p>
-        <p>{t('contacts.github')}: <a href="https://github.com/yourprofile">https://github.com/yourprofile</a></p>
+        <p><FaEnvelope /> {t('contacts.email')}: your.email@example.com</p>
+        <p><FaPhone /> {t('contacts.phone')}: +1234567890</p>
+        <p><FaGithub /> {t('contacts.github')}: <a href="https://github.com/yourprofile">https://github.com/yourprofile</a></p>
       </ContactDetails>
     </ContactsWrapper>
   );
 };
 
 export default Contacts;
+

@@ -7,7 +7,6 @@ const resources = {
   en: {
     translation: {
       "header": {
-        name: "Viktoriya Pashkouskaya",
         intro: "IT technician with experience in ",
         systems: "Windows and Linux",
         skills_intro: "Knowledge of ",
@@ -66,7 +65,6 @@ const resources = {
   ru: {
     translation: {
       "header": {
-        "name": "Виктория Пашковская",
         "intro": "Технический специалист с опытом работы в ",
         "systems": "Windows и Linux",
         "skills_intro": "Знания в области ",
@@ -125,7 +123,6 @@ const resources = {
   es: {
     translation: {
       "header": {
-        "name": "Viktoriya Pashkouskaya",
         "intro": "Técnico en informática con experiencia en ",
         "systems": "Windows y Linux",
         "skills_intro": "Conocimientos en ",
@@ -184,7 +181,6 @@ const resources = {
   eu: {
     translation: {
       "header": {
-        name: "Viktoriya Pashkouskaya",
         intro: "Informatika teknikaria esperientziarekin ",
         systems: "Windows eta Linux sistemetan",
         skills_intro: "Ezagutza hauek ditu: ",

@@ -19,8 +19,8 @@ const AppWrapper = styled.div`
 const Resume = () => (
   <AppWrapper>
     <LanguageSelector />
-    <Header />
     <Contacts />
+    <Header />
     <Projects />
     <Skills />
   </AppWrapper>
