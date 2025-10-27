@@ -2,20 +2,20 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-const EducationWrapper = styled.div`
+const MyHistoryWrapper= styled.div`
   margin: 20px 0;
   padding: 10px;
 `;
 
-const Education = () => {
+const MyHistory = () => {
   const { t } = useTranslation();
   return (
-    <EducationWrapper>
-      <h2>{t('education.title')}</h2>
-      <p>{t('education.description1')}</p>
+    <MyHistoryWrapper>
+      <h2>{t('myHistory.title')}</h2>
+      <p>{t('myHistory.description1')}</p>
       <p>{t('education.description2')}</p>
-    </EducationWrapper>
+    </MyHistoryWrapper>
   );
 };
 
-export default Education;
+export default MyHistory;

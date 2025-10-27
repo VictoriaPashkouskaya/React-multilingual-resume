@@ -5,7 +5,7 @@ import Header from './Header';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import PersonalHistory from './PersonalHistory';
+import MyHistory from './MyHistory';
 
 // --- Анимации ---
 const fadeIn = keyframes`
@@ -84,7 +84,7 @@ const InteractiveMenu = () => {
     { id: 'skills', label: t('menu.skills'), component: <Skills /> },
     { id: 'education', label: t('menu.education'), component: <Education /> },
     { id: 'experience', label: t('menu.experience'), component: <Experience /> },
-    { id: 'history', label: t('menu.history'), component: <PersonalHistory /> },
+    { id: 'history', label: t('menu.history'), component: <MyHistory/> },
   ];
 
   const handleClick = (id) => {

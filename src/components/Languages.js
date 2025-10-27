@@ -143,7 +143,7 @@ const LanguagesCarousel = () => {
 
   return (
     <>
-      <SectionTitle>Idiomas / Languages</SectionTitle>
+      <SectionTitle>Languages</SectionTitle>
       <CarouselWrapper {...handlers}>
         <Arrow onClick={prev} disabled={index === 0}>&lt;</Arrow>
         <CardWrapper>
