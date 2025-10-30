@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styled, { keyframes } from "styled-components";
-import logoImg from "../img/Captura_de_pantalla_2025-10-26_102258-removebg-preview.png"; 
+import logoImg from "../img/Captura_de_pantalla_2025-10-26_102258-removebg-preview.png";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }

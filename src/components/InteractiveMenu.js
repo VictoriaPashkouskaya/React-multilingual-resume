@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
+
+import { FaUser, FaTools, FaGraduationCap, FaBriefcase, FaHistory } from 'react-icons/fa';
+
 import Header from './Header';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 import MyHistory from './MyHistory';
 
-// --- Анимации ---
+// Анимации
 const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 `;
 
 const glow = keyframes`
-  0%, 100% { box-shadow: 0 0 8px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5); }
+  0%, 100% { box-shadow: 0 0 10px rgba(0,255,255,.5); }
+  50% { box-shadow: 0 0 20px rgba(0,255,255,.8); }
 `;
 
-// --- Стили ---
+// Контейнер
 const MenuWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   max-width: 900px;
   margin: 1rem auto;
   font-family: 'Montserrat', sans-serif;
 `;
 
+// Текстовые кнопки (режим по умолчанию)
 const TabButtons = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -35,87 +37,123 @@ const TabButtons = styled.div`
 
   button {
     flex: 1 1 48%;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem;
     font-weight: 600;
-    font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
-    border-radius: 12px;
-    background: #fff;
-    color: #000;
-    transition: all 0.25s ease;
-    position: relative;
-    outline: none;
+    border-radius: 10px;
     border: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* лёгкая тень по умолчанию */
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: .3s;
 
     &:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 0 13px rgba(0, 255, 255, 0.4), 0 0 25px rgba(0, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
     &.active {
       animation: ${glow} 1.5s infinite alternate;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 255, 0.3);
     }
   }
+`;
 
+// Режим иконок (когда секция открыта)
+const IconMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 1rem;
+
+  button {
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
+
+    svg { font-size: 22px; }
+
+    &:hover { transform: scale(1.1); }
+
+    &.active { animation: ${glow} 1.5s infinite alternate; }
+  }
+
+  /* Мобильная версия */
   @media (max-width: 600px) {
-    flex-direction: column;
+    flex-wrap: wrap;
     button {
-      flex: 1 1 100%;
+      width: 65px;
+      height: 65px;
+      border-radius: 18px;
+      svg { font-size: 28px; }
     }
   }
 `;
 
+// Контейнер контента
 const SectionWrapper = styled.div`
-  animation: ${fadeIn} 0.4s ease forwards;
+  animation: ${fadeIn} .4s ease;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: .3s;
 `;
 
-// --- Компонент ---
 const InteractiveMenu = () => {
   const { t } = useTranslation();
-  const [activeSection, setActiveSection] = useState(null);
+  const [active, setActive] = useState(null);
 
   const sections = [
-    { id: 'header', label: t('menu.aboutMe'), component: <Header /> },
-    { id: 'skills', label: t('menu.skills'), component: <Skills /> },
-    { id: 'education', label: t('menu.education'), component: <Education /> },
-    { id: 'experience', label: t('menu.experience'), component: <Experience /> },
-    { id: 'history', label: t('menu.history'), component: <MyHistory/> },
+    { id: 'header', label: t('menu.aboutMe'), icon: <FaUser />, component: <Header /> },
+    { id: 'skills', label: t('menu.skills'), icon: <FaTools />, component: <Skills /> },
+    { id: 'education', label: t('menu.education'), icon: <FaGraduationCap />, component: <Education /> },
+    { id: 'experience', label: t('menu.experience'), icon: <FaBriefcase />, component: <Experience /> },
+    { id: 'history', label: t('menu.history'), icon: <FaHistory />, component: <MyHistory /> },
   ];
-
-  const handleClick = (id) => {
-    setActiveSection(prev => (prev === id ? null : id));
-  };
 
   return (
     <MenuWrapper>
-      <TabButtons>
-        {sections.map(({ id, label }) => (
-          <button
-            key={id}
-            className={activeSection === id ? 'active' : ''}
-            onClick={() => handleClick(id)}
-          >
-            {label}
-          </button>
-        ))}
-      </TabButtons>
 
+      {/* Меню меняется в зависимости от состояния */}
+      {active === null ? (
+        <TabButtons>
+          {sections.map(({ id, label }) => (
+            <button key={id} onClick={() => setActive(id)}>
+              {label}
+            </button>
+          ))}
+        </TabButtons>
+      ) : (
+        <IconMenu>
+          {sections.map(({ id, icon }) => (
+            <button
+              key={id}
+              className={active === id ? 'active' : ''}
+              onClick={() => setActive(active === id ? null : id)}
+            >
+              {icon}
+            </button>
+          ))}
+        </IconMenu>
+      )}
+
+      {/* Контент секций */}
       {sections.map(({ id, component }) => (
         <SectionWrapper
           key={id}
           style={{
-            maxHeight: activeSection === id ? '1000px' : '0',
-            padding: activeSection === id ? '0.5rem 0' : '0',
+            maxHeight: active === id ? '1000px' : '0',
+            opacity: active === id ? 1 : 0,
+            padding: active === id ? '0.5rem 0' : '0'
           }}
         >
-          {activeSection === id && component}
+          {active === id && component}
         </SectionWrapper>
       ))}
+
     </MenuWrapper>
   );
 };
