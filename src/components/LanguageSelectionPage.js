@@ -1,111 +1,149 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import styled, { keyframes } from "styled-components";
+import logoImg from "../img/Captura_de_pantalla_2025-10-26_102258-removebg-preview.png"; 
 
-// Анимация пульса для кнопок
-const pulse = keyframes`
-  0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-  50% { transform: scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); }
-  100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
-const LanguageSelectionWrapper = styled.div`
+const glow = keyframes`
+  0%, 100% { filter: drop-shadow(0 0 10px #ffd70088); }
+  50% { filter: drop-shadow(0 0 30px #ffffffdd); }
+`;
+
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: radial-gradient(circle at 30% 20%, #3a1c71, #120b24 90%);
   padding: 20px;
-  background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
 `;
 
-const AppTitle = styled.h1`
-  font-size: 4rem;
-  font-weight: 900;
-  color: #fff;
-  text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
-  margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
+const Logo = styled.img`
+  width: 150px;
+  height: auto;
+  animation: ${glow} 4s infinite ease-in-out;
+  margin-bottom: 2.5rem;
 
   @media (max-width: 480px) {
-    font-size: 2.5rem;
+    width: 100px;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+  animation: ${fadeIn} 0.8s ease forwards;
+
+  @media (max-width: 480px) {
+    font-size: 2.4rem;
   }
 `;
 
 const Description = styled.p`
-  font-size: 1.3rem;
-  color: #f0f0f0;
-  max-width: 650px;
+  font-size: 1.25rem;
+  color: #f5e9ff;
   text-align: center;
-  line-height: 1.6;
-  margin-bottom: 3rem;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  animation: ${fadeIn} 1.2s ease forwards;
 
   @media (max-width: 480px) {
     font-size: 1rem;
-    margin-bottom: 2rem;
   }
 `;
 
-// Кнопка с 3D эффектом и премиум градиентами
 const Button = styled.button`
-  margin: 10px;
-  padding: 16px 36px;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: white;
-  border: none;
-  border-radius: 60px;
-  cursor: pointer;
-  background: linear-gradient(135deg, ${({ colorStart, colorEnd }) => colorStart}, ${({ colorStart, colorEnd }) => colorEnd});
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: ${pulse} 3s infinite;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  margin: 12px;
+  padding: 16px 48px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    ${({ c1 }) => c1},
+    ${({ c2 }) => c2}
+  );
+
+  box-shadow:
+    inset 0 1px 4px rgba(255, 255, 255, 0.4),
+    0 10px 25px rgba(0,0,0,0.4),
+    0 0 18px rgba(255, 215, 0, 0.25);
+
+  transition: all 0.45s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
   &:hover {
     transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    box-shadow:
+      inset 0 1px 5px rgba(255,255,255,0.6),
+      0 18px 40px rgba(0,0,0,0.55),
+      0 0 28px rgba(255, 215, 0, 0.55);
   }
 
   &:active {
-    transform: translateY(2px) scale(0.98);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: scale(0.97);
+    box-shadow:
+      inset 0 2px 6px rgba(0,0,0,0.4),
+      0 6px 18px rgba(0,0,0,0.4);
   }
 
   @media (max-width: 480px) {
-    width: 80%;
+    width: 85%;
     padding: 14px 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `;
 
 const LanguageSelectionPage = () => {
   const navigate = useNavigate();
+  const { i18n } = useTranslation(); // подключаем i18n
 
   const selectLanguage = (lang) => {
-    localStorage.setItem('language', lang);
-    navigate('/resume');
+    i18n.changeLanguage(lang); // меняем язык
+    localStorage.setItem("language", lang);
+    navigate("/resume"); // переходим на резюме
   };
 
   return (
-    <LanguageSelectionWrapper>
-      <AppTitle>CV Viktoria</AppTitle>
+    <Wrapper>
+      <Logo src={logoImg} alt="Logo" />
+      <Title>CV Viktoria</Title>
       <Description>
         Welcome! / Добро пожаловать! / ¡Bienvenido! / Ongi etorri! <br />
-        Select your preferred language / Выберите предпочитаемый язык / Seleccione su idioma preferido / Hautatu nahiago duzun hizkuntza:
+        Select your preferred language:
       </Description>
 
-      <Button colorStart="#FF416C" colorEnd="#FF4B2B" onClick={() => selectLanguage('en')}>English</Button>
-      <Button colorStart="#1D4350" colorEnd="#A43931" onClick={() => selectLanguage('ru')}>Русский</Button>
-      <Button colorStart="#FFB75E" colorEnd="#ED8F03" onClick={() => selectLanguage('es')}>Español</Button>
-      <Button colorStart="#6A82FB" colorEnd="#FC5C7D" onClick={() => selectLanguage('eu')}>Euskara</Button>
-    </LanguageSelectionWrapper>
+      <Button c1="#FF416C" c2="#FF4B2B" onClick={() => selectLanguage("en")}>
+        English
+      </Button>
+      <Button c1="#1D4350" c2="#A43931" onClick={() => selectLanguage("ru")}>
+        Русский
+      </Button>
+      <Button c1="#FFB75E" c2="#ED8F03" onClick={() => selectLanguage("es")}>
+        Español
+      </Button>
+      <Button c1="#6A82FB" c2="#FC5C7D" onClick={() => selectLanguage("eu")}>
+        Euskara
+      </Button>
+    </Wrapper>
   );
 };
 
 export default LanguageSelectionPage;
-

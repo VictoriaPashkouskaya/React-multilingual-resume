@@ -1,0 +1,46 @@
+{
+    "en": {
+      "languages": {
+        "spanish": "Spanish",
+        "basque": "Basque",
+        "english": "English",
+        "ukrainian": "Ukrainian",
+        "russian": "Russian",
+        "learningBasque": "Learning",
+        "learningEnglish": "Learning"
+      }
+    },
+    "ru": {
+      "languages": {
+        "spanish": "Испанский",
+        "basque": "Баскский",
+        "english": "Английский",
+        "ukrainian": "Украинский",
+        "russian": "Русский",
+        "learningBasque": "Изучение",
+        "learningEnglish": "Изучение"
+      }
+    },
+    "es": {
+      "languages": {
+        "spanish": "Español",
+        "basque": "Vasco",
+        "english": "Inglés",
+        "ukrainian": "Ucraniano",
+        "russian": "Ruso",
+        "learningBasque": "Aprendiendo",
+        "learningEnglish": "Aprendiendo"
+      }
+    },
+    "eu": {
+      "languages": {
+        "spanish": "Espainiera",
+        "basque": "Euskara",
+        "english": "Ingelesa",
+        "ukrainian": "Ukrainiera",
+        "russian": "Errusiera",
+        "learningBasque": "Ikasten",
+        "learningEnglish": "Ikasten"
+      }
+    }
+  }

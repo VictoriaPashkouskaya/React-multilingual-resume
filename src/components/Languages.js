@@ -1,17 +1,15 @@
-// src/components/LanguagesCarousel.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useSwipeable } from 'react-swipeable';
-import ReactCountryFlag from "react-country-flag";
+import ReactCountryFlag from 'react-country-flag';
 import BasqueFlagImg from '../img/basque.jpg';
+import { useTranslation } from 'react-i18next';
 
-// --- Анимация свечения ---
 const glow = keyframes`
   0%, 100% { box-shadow: 0 0 4px rgba(0,255,255,0.6); }
   50% { box-shadow: 0 0 12px rgba(0,255,255,0.8); }
 `;
 
-// --- Стили ---
 const SectionTitle = styled.h2`
   text-align: center;
   font-size: 1.8rem;
@@ -26,10 +24,7 @@ const CarouselWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
+  overflow: hidden;
 `;
 
 const Arrow = styled.button`
@@ -39,50 +34,34 @@ const Arrow = styled.button`
   cursor: pointer;
   color: #111;
   margin: 0 10px;
-  opacity: ${props => props.disabled ? 0.3 : 1};
-  pointer-events: ${props => props.disabled ? 'none' : 'auto'};
   transition: color 0.3s;
-
-  &:hover {
-    color: #0ff;
-  }
-
-  @media (max-width: 768px) {
-    display: none; // скрываем стрелки на мобиле
-  }
+  &:hover { color: #0ff; }
+  @media (max-width: 768px) { display: none; }
 `;
 
 const CardWrapper = styled.div`
-  display: flex;
   overflow: hidden;
-  width: 660px;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
+  flex: 1;
 `;
 
 const CardList = styled.div`
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
   transform: translateX(${props => props.offset}px);
 `;
 
 const Card = styled.div`
-  min-width: 200px;
+  flex: 0 0 auto;
+  width: 220px;
+  margin: 0 10px;
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem 1.2rem;
-  margin: 0 10px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px) scale(1.05);
-  }
-
+  &:hover { transform: translateY(-5px) scale(1.05); }
   ${props => props.learning && css`
     animation: ${glow} 1.5s infinite alternate;
   `}
@@ -114,62 +93,69 @@ const LanguageLevel = styled.p`
   font-weight: 500;
 `;
 
-// --- Компонент ---
 const LanguagesCarousel = () => {
+  const { t } = useTranslation();
+  const cardRef = useRef(null);
+  const wrapperRef = useRef(null);
   const [index, setIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(240);
 
   const languages = [
-    { name: 'Español', level: 'B2', code: 'ES' },
-    { name: 'Euskera', level: 'A2', learning: true, customFlag: BasqueFlagImg, learningText: 'Ikasten' },
-    { name: 'Inglés', level: 'A2', learning: true, code: 'GB', learningText: 'Learning' },
-    { name: 'Ucraniano', level: 'C1', code: 'UA' },
-    { name: 'Ruso', level: 'C1', code: 'RU' },
+    { name: t('languages.spanish'), level: 'B2', code: 'ES' },
+    { name: t('languages.basque'), level: 'A2', learning: true, customFlag: BasqueFlagImg, learningText: t('languages.learningBasque') },
+    { name: t('languages.english'), level: 'A2', learning: true, code: 'GB', learningText: t('languages.learningEnglish') },
+    { name: t('languages.ukrainian'), level: 'C1', code: 'UA' },
+    { name: t('languages.russian'), level: 'C1', code: 'RU' },
   ];
 
-  const visibleCards = 3;
-  const cardWidth = 220; // ширина + margin
+  // Обновляем ширину карточек при изменении размера окна
+  useEffect(() => {
+    const updateSizes = () => {
+      if (cardRef.current && wrapperRef.current) {
+        const totalCardWidth = cardRef.current.offsetWidth + 20; // ширина + margin
+        setCardWidth(totalCardWidth);
+      }
+    };
+    updateSizes();
+    window.addEventListener('resize', updateSizes);
+    return () => window.removeEventListener('resize', updateSizes);
+  }, []);
+
+  const maxIndex = languages.length;
   const offset = -index * cardWidth;
 
-  const prev = () => setIndex(i => Math.max(i - 1, 0));
-  const next = () => setIndex(i => Math.min(i + 1, languages.length - visibleCards));
+  // Бесконечный цикл
+  const prev = () => setIndex(i => (i - 1 + maxIndex) % maxIndex);
+  const next = () => setIndex(i => (i + 1) % maxIndex);
 
-  // --- обработчики свайпа ---
   const handlers = useSwipeable({
-    onSwipedLeft: () => next(),
-    onSwipedRight: () => prev(),
+    onSwipedLeft: next,
+    onSwipedRight: prev,
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
 
   return (
     <>
-      <SectionTitle>Languages</SectionTitle>
+      <SectionTitle>{t('menu.languages')}</SectionTitle>
       <CarouselWrapper {...handlers}>
-        <Arrow onClick={prev} disabled={index === 0}>&lt;</Arrow>
-        <CardWrapper>
+        <Arrow onClick={prev} aria-label="Previous language">&lt;</Arrow>
+        <CardWrapper ref={wrapperRef}>
           <CardList offset={offset}>
             {languages.map((lang, i) => (
-              <Card key={i} learning={lang.learning}>
+              <Card key={i} learning={lang.learning} ref={i === 0 ? cardRef : null}>
                 <FlagWrapper>
-                  {lang.customFlag ? (
-                    <FlagImage src={lang.customFlag} alt={lang.name} />
-                  ) : (
-                    <ReactCountryFlag 
-                      countryCode={lang.code} 
-                      svg 
-                      style={{ width: '100%', height: '100%' }} 
-                    />
-                  )}
+                  {lang.customFlag
+                    ? <FlagImage src={lang.customFlag} alt={lang.name} />
+                    : <ReactCountryFlag countryCode={lang.code} svg style={{ width: '100%', height: '100%' }} />}
                 </FlagWrapper>
                 <LanguageName>{lang.name}</LanguageName>
-                <LanguageLevel>
-                  {lang.learning ? lang.learningText : lang.level}
-                </LanguageLevel>
+                <LanguageLevel>{lang.learning ? lang.learningText : lang.level}</LanguageLevel>
               </Card>
             ))}
           </CardList>
         </CardWrapper>
-        <Arrow onClick={next} disabled={index >= languages.length - visibleCards}>&gt;</Arrow>
+        <Arrow onClick={next} aria-label="Next language">&gt;</Arrow>
       </CarouselWrapper>
     </>
   );
