@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 
-import { FaUser, FaTools, FaGraduationCap, FaBriefcase, FaHistory } from 'react-icons/fa';
+import { FaUser, FaTools, FaGraduationCap, FaBriefcase, FaHistory, FaLanguage } from 'react-icons/fa';
 
 import Header from './Header';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 import MyHistory from './MyHistory';
+import Languages from './Languages'; // <-- твой компонент для языков
 
 // Анимации
 const fadeIn = keyframes`
@@ -28,7 +29,7 @@ const MenuWrapper = styled.div`
   font-family: 'Montserrat', sans-serif;
 `;
 
-// Текстовые кнопки (режим по умолчанию)
+// Текстовые кнопки
 const TabButtons = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -47,17 +48,13 @@ const TabButtons = styled.div`
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     transition: .3s;
 
-    &:hover {
-      transform: translateY(-2px);
-    }
+    &:hover { transform: translateY(-2px); }
 
-    &.active {
-      animation: ${glow} 1.5s infinite alternate;
-    }
+    &.active { animation: ${glow} 1.5s infinite alternate; }
   }
 `;
 
-// Режим иконок (когда секция открыта)
+// Иконки при активной секции
 const IconMenu = styled.div`
   display: flex;
   justify-content: center;
@@ -83,7 +80,6 @@ const IconMenu = styled.div`
     &.active { animation: ${glow} 1.5s infinite alternate; }
   }
 
-  /* Мобильная версия */
   @media (max-width: 600px) {
     flex-wrap: wrap;
     button {
@@ -112,12 +108,12 @@ const InteractiveMenu = () => {
     { id: 'education', label: t('menu.education'), icon: <FaGraduationCap />, component: <Education /> },
     { id: 'experience', label: t('menu.experience'), icon: <FaBriefcase />, component: <Experience /> },
     { id: 'history', label: t('menu.history'), icon: <FaHistory />, component: <MyHistory /> },
+    { id: 'languages', label: t('menu.languages'), icon: <FaLanguage />, component: <Languages /> }, // исправлено
   ];
 
   return (
     <MenuWrapper>
-
-      {/* Меню меняется в зависимости от состояния */}
+      {/* Меню */}
       {active === null ? (
         <TabButtons>
           {sections.map(({ id, label }) => (
@@ -153,7 +149,6 @@ const InteractiveMenu = () => {
           {active === id && component}
         </SectionWrapper>
       ))}
-
     </MenuWrapper>
   );
 };

@@ -21,7 +21,6 @@ const Resume = () => (
     <LanguageSelector />
     <Contacts />
     <InteractiveMenu/>
-    <Languages/>
     <Projects />
   </AppWrapper>
 );
