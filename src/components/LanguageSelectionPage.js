@@ -122,6 +122,7 @@ const LanguageSelectionPage = () => {
   };
 
   return (
+
     <Wrapper>
       <Logo src={logoImg} alt="Logo" />
       <Title>CV Viktoria</Title>

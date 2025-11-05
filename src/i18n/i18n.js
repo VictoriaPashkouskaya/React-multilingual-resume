@@ -314,10 +314,17 @@ const resources = {
         "Ru": "RU",
         "ES": "ES",
         "EU": "EU"
-      }
-    }
-};
-
+      },
+        "social": {
+          "teamwork": "Talde-lana eta lankidetza ikasketa eta lan proiektuetan.",
+          "leadership": "Lidergoa eta zereginak koordinatzea.",
+          "communication": "Komunikazio argia eta eraginkorra.",
+          "problemSolving": "Arazoak konpontzea eta gertakariak aztertzea.",
+          "planning": "Proiektu eta jardueren planifikazioa eta antolaketa."
+        }
+      },
+      
+    };
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
