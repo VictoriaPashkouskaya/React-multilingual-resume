@@ -1,77 +1,64 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
-
-const StyledHeader = styled.header`
-  .card-body {
-    padding: 2rem;
-
-    @media (max-width: 768px) { padding: 1.5rem; }
-    @media (max-width: 480px) { padding: 1rem; }
-  }
-
-  h1.display-3 {
-    font-size: 2rem;
-    line-height: 1.2;
-    @media (max-width: 768px) { font-size: 1.6rem; }
-    @media (max-width: 480px) { font-size: 1.4rem; }
-  }
-
-  p.lead {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 0.4rem;
-    @media (max-width: 768px) { font-size: 0.95rem; line-height: 1.4; }
-    @media (max-width: 480px) { font-size: 0.9rem; line-height: 1.3; }
-  }
-`;
+import '../styled/Header.css';
+import { FaWindows, FaLinux, FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt } from 'react-icons/fa';
 
 const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <StyledHeader className="d-flex justify-content-center my-4">
-      <div className="card shadow-lg rounded-4 overflow-hidden"
-           style={{
-             width: '100%',
-             maxWidth: '700px',
-             background: 'linear-gradient(135deg, #ffecd2, #fcb69f)',
-             border: 'none',
-           }}>
+    <header className="header-container">
+      <div className="header-card">
         <div className="card-body text-center">
-          <h1 className="display-3 fw-bold mb-3 text-gradient"
-              style={{
-                background: 'linear-gradient(90deg, #ff5e3a, #ffb347)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '1px 1px 4px rgba(0,0,0,0.2)'
-              }}>
-            {t('')} {/* Твой логотип/имя */}
+
+          {/* Title / Logo */}
+          <h1 className="display-3 fw-bold mb-3">
+            {t('')} {/* logo or name placeholder */}
           </h1>
 
-          <p className="lead text-dark mb-1">
-            {t('')}
-            <span className="fw-bold text-danger">{t('header.systems')}</span>.
+          {/* Systems */}
+          <p className="lead mb-1">
+            {t('header.intro')}
+<FaWindows className="icon" color="#0078D6" />
+            <span className="fw-bold text-danger">
+              {t('header.systems')}
+              <FaLinux className="icon" color="#FCC624" />
+            </span>
+            .
           </p>
 
-          <p className="lead text-dark mb-1">
+          {/* Skills */}
+          <p className="lead mb-1">
             {t('header.skills_intro')}
-            <span className="fw-bold text-danger">{t('header.skills_list')}</span>
+            <span className="fw-bold text-danger">
+              <FaHtml5 className="icon" color="#E34F26" />
+              <FaCss3Alt className="icon" color="#1572B6" />
+              {t('header.skills_list')}
+              <FaReact className="icon" color="#61DAFB" />
+              <FaJsSquare className="icon" color="#F7DF1E" />
+            </span>
+            
             {t('header.version_control')}
-            <span className="fw-bold text-danger">{t('header.git')}</span>.
+            <span className="fw-bold text-danger">
+              <FaGitAlt className="icon" color="#F05032" />
+              {t('header.git')}
+              
+            </span>
+            .
           </p>
 
-          <p className="lead text-dark mb-1">
+          {/* Expertise */}
+          <p className="lead mb-1">
             {t('header.expertise_intro')}
             <span className="fw-bold text-danger">{t('header.expertise_list')}</span>
           </p>
 
-          <p className="lead text-dark mb-0">
-            {t('header.focus')}
-          </p>
+          {/* Focus */}
+          <p className="lead mb-0">{t('header.focus')}</p>
+
         </div>
       </div>
-    </StyledHeader>
+    </header>
   );
 };
 

@@ -1,0 +1,76 @@
+{
+  "header": {
+    "intro": "IT technician with experience in ",
+    "systems": "Windows and Linux",
+    "skills_intro": "Knowledge of ",
+    "skills_list": "HTML, CSS, JavaScript, React, API",
+    "version_control": " and version control systems ",
+    "git": "Git, GitHub",
+    "expertise_intro": "Skilled in ",
+    "expertise_list": "technical support, digital document management, hardware and peripherals maintenance, and creating professional presentations using PowerPoint, Canva, and Figma.",
+    "focus": "Focused on incident resolution, system performance optimization,"
+  },
+  "selectLanguage": "Select your preferred language",
+  "contacts": {
+    "title": "Contacts",
+    "email": "Email",
+    "phone": "Phone",
+    "github": "GitHub"
+  },
+  "projects": {
+    "title": "Projects",
+    "description1": "Project 1 description",
+    "description2": "Project 2 description"
+  },
+  "skills": {
+    "title": "Skills",
+    "categoryDigital": "Digital / Technical",
+    "categorySocial": "Social / Interpersonal",
+    "digital": {
+      "systems": "Operating systems: installation, configuration and maintenance of Windows, Linux and macOS.",
+      "office": "Office suite: Advanced use of Microsoft Office (Word, Excel, PowerPoint, Access).",
+      "presentation": "Presentation & design tools: PowerPoint, Canva, Figma; creation of visual presentations and prototypes.",
+      "googleTools": "Google Workspace tools: Drive, Gmail, Calendar, Meet, Keep, Docs.",
+      "hardware": "Hardware: diagnosis, cleaning, assembly, maintenance of equipment and installation of components.",
+      "peripherals": "Peripherals: basic configuration and maintenance of printers, scanners and external devices.",
+      "docs": "Document management: organization and digital filing, version control, cloud storage.",
+      "networks": "Networks: basic knowledge of TCP/IP, DHCP, DNS, VPN, routers and switches.",
+      "security": "IT security: data protection, backups, management of access permissions.",
+      "webDev": "Web development: HTML5, CSS3, JavaScript, React, Bootstrap, responsive design.",
+      "git": "Version control: Git, GitHub, GitLab.",
+      "databases": "Databases: basic knowledge of MySQL, MongoDB.",
+      "virtualization": "Virtualization: experience with VMware, VirtualBox.",
+      "support": "Technical support: incident resolution, remote assistance, internal customer support.",
+      "projectManagement": "Project management: use of Trello, Jira for planning and task tracking.",
+      "teamwork": "Communication and teamwork: coordination with users and technical departments."
+    },
+    "social": {
+      "teamwork": "Teamwork and collaboration in academic and work projects.",
+      "leadership": "Leadership and task coordination.",
+      "communication": "Clear and effective communication.",
+      "problemSolving": "Problem solving and incident analysis.",
+      "planning": "Project and activity planning and organization."
+    }
+  },
+  "menu": {
+    "languages": "Languages",
+    "aboutMe": "About Me",
+    "skills": "Skills",
+    "education": "Education",
+    "experience": "Experience",
+    "history": "My History"
+  },
+  "languages": {
+    "spanish": "Spanish",
+    "basque": "Basque",
+    "english": "English",
+    "ukrainian": "Ukrainian",
+    "russian": "Russian",
+    "learningBasque": "Learning",
+    "learningEnglish": "Learning"
+  },
+  "En": "EN",
+  "Ru": "RU",
+  "ES": "ES",
+  "EU": "EU"
+}

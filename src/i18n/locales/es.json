@@ -1,0 +1,76 @@
+{
+  "header": {
+    "intro": "Técnico en informática con experiencia en ",
+    "systems": "Windows y Linux",
+    "skills_intro": "Conocimientos en ",
+    "skills_list": "HTML, CSS, JavaScript, React",
+    "version_control": " y sistemas de control de versiones ",
+    "git": "Git, GitHub",
+    "expertise_intro": "Capacitado en ",
+    "expertise_list": "soporte técnico, gestión documental digital, mantenimiento de hardware y periféricos, y creación de presentaciones profesionales con PowerPoint, Canva y Figma.",
+    "focus": "Enfocado en la resolución de incidencias, optimización del rendimiento del sistema y atención al usuario."
+  },
+  "selectLanguage": "Seleccione su idioma preferido",
+  "contacts": {
+    "title": "Contactos",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "github": "GitHub"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description1": "Descripción del proyecto 1",
+    "description2": "Descripción del proyecto 2"
+  },
+  "skills": {
+    "title": "Competencias",
+    "categoryDigital": "Competencia Digital: Técnicas / Digitales",
+    "categorySocial": "Sociales / Interpersonales",
+    "digital": {
+      "systems": "Sistemas operativos: Instalación, configuración y mantenimiento de Windows, Linux y macOS.",
+      "office": "Ofimática: Uso avanzado de Microsoft Office (Word, Excel, PowerPoint, Access).",
+      "presentation": "Herramientas de presentación y diseño: PowerPoint, Canva, Figma; creación de presentaciones visuales y prototipos.",
+      "googleTools": "Herramientas de Google Workspace: Drive, Gmail, Calendar, Meet, Keep, Docs.",
+      "hardware": "Hardware: Diagnóstico, limpieza, ensamblaje, mantenimiento de equipos e instalación de componentes.",
+      "peripherals": "Periféricos: Configuración y mantenimiento básico de impresoras, escáneres y dispositivos externos.",
+      "docs": "Gestión documental: Organización y archivo digital, control de versiones, almacenamiento en la nube.",
+      "networks": "Redes: Conocimientos básicos de TCP/IP, DHCP, DNS, VPN, routers y switches.",
+      "security": "Seguridad informática: Protección de datos, copias de seguridad, gestión de permisos de acceso.",
+      "webDev": "Desarrollo web: HTML5, CSS3, JavaScript, React, Bootstrap, diseño responsivo.",
+      "git": "Control de versiones: Git, GitHub, GitLab.",
+      "databases": "Bases de datos: Conocimientos básicos de MySQL, MongoDB.",
+      "virtualization": "Virtualización: Experiencia con VMware, VirtualBox.",
+      "support": "Soporte técnico: Resolución de incidencias, asistencia remota, atención al cliente interno.",
+      "projectManagement": "Gestión de proyectos: Uso de Trello, Jira para planificación y seguimiento de tareas.",
+      "teamwork": "Comunicación y trabajo en equipo: Coordinación con usuarios y departamentos técnicos."
+    },
+    "social": {
+      "teamwork": "Trabajo en equipo y colaboración en proyectos académicos y laborales.",
+      "leadership": "Liderazgo y coordinación de tareas.",
+      "communication": "Comunicación clara y efectiva.",
+      "problemSolving": "Resolución de problemas y análisis de incidencias.",
+      "planning": "Planificación y organización de proyectos y actividades."
+    }
+  },
+  "menu": {
+    "languages": "Idiomas",
+    "aboutMe": "Sobre mí",
+    "skills": "Habilidades",
+    "education": "Educación",
+    "experience": "Experiencia",
+    "history": "Mi historia"
+  },
+  "languages": {
+    "spanish": "Español",
+    "basque": "Vasco",
+    "english": "Inglés",
+    "ukrainian": "Ucraniano",
+    "russian": "Ruso",
+    "learningBasque": "Aprendiendo",
+    "learningEnglish": "Aprendiendo"
+  },
+  "En": "EN",
+  "Ru": "RU",
+  "ES": "ES",
+  "EU": "EU"
+}

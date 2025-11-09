@@ -1,0 +1,127 @@
+/* Smooth fade & glow animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(0, 255, 255, 0.7);
+  }
+}
+
+/* === Main container === */
+.menu-wrapper {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  font-family: 'Montserrat', sans-serif;
+  perspective: 1000px; /* Subtle 3D effect */
+}
+
+/* === Menu with text buttons === */
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.tab-buttons button {
+  flex: 1 1 46%;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15),
+              -4px -4px 10px rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease;
+}
+
+.tab-buttons button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.2),
+              -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+.tab-buttons button:active {
+  transform: scale(0.97);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tab-buttons button.active {
+  animation: glow 1.5s infinite alternate;
+  background: linear-gradient(145deg, #dffcff, #e3f8ff);
+}
+
+/* === Icon menu (when section active) === */
+.icon-menu {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon-menu button {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border-radius: 10%;
+  border: none;
+  width: 120px;
+  height: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.15),
+              -3px -3px 8px rgba(255, 255, 255, 0.9);
+}
+
+.icon-menu button svg {
+  font-size: 22px;
+  color: #0a0a0a;
+}
+
+.icon-menu button:hover {
+  transform: scale(1.1) rotateX(10deg);
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.25),
+              -5px -5px 14px rgba(255, 255, 255, 0.9);
+}
+
+.icon-menu button:active {
+  transform: scale(0.95);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.icon-menu button.active {
+  animation: glow 1.5s infinite alternate;
+  background: linear-gradient(145deg, #e3faff, #d1f7ff);
+}
+
+/* === Section content === */
+.section-wrapper {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  max-height: 0;
+}
+
+.section-wrapper.visible {
+  animation: fadeIn 0.4s ease;
+  opacity: 1;
+  max-height: 1000px;
+  padding: 0.5rem 0;
+}

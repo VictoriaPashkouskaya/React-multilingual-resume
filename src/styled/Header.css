@@ -1,0 +1,100 @@
+/* Main header container */
+.header-container {
+display: flex;
+justify-content: center;
+margin: 1rem 0;
+font-family: 'Montserrat', sans-serif;
+}
+
+/* Card wrapper */
+.header-card {
+width: 100%;
+max-width: 750px;
+background: linear-gradient(145deg, #fffefe, #fdfdfd);
+border-radius: 10px;
+box-shadow:
+    16px 16px 16px rgba(0, 0, 0, 0.15),
+    36px 0px 16px rgba(255, 255, 255, 0.9);
+overflow: hidden;
+transition: all 0.3s ease;
+}
+
+.header-card:hover {
+transform: translateY(-4px) scale(1.01);
+box-shadow:
+    8px 8px 18px rgba(0, 0, 0, 0.2),
+    -8px -8px 18px rgba(255, 255, 255, 1);
+}
+
+/* Inner padding */
+.header-card .card-body {
+padding: 2rem;
+}
+
+@media (max-width: 768px) {
+.header-card .card-body {
+    padding: 1.5rem;
+}
+}
+
+@media (max-width: 480px) {
+.header-card .card-body {
+    padding: 1rem;
+}
+}
+
+/* Headline */
+.header-card h1.display-3 {
+font-size: 2rem;
+line-height: 1.2;
+color: #333;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+.header-card h1.display-3 {
+    font-size: 1.6rem;
+}
+}
+
+@media (max-width: 480px) {
+.header-card h1.display-3 {
+    font-size: 1.4rem;
+}
+}
+
+/* Paragraphs */
+.header-card p.lead {
+font-size: 1.5rem;
+line-height: 1.6;
+margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+.header-card p.lead {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+}
+
+@media (max-width: 480px) {
+.header-card p.lead {
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+}
+
+/* Accent color */
+.header-card .fw-bold.text-danger {
+color: #ff5e3a;
+text-shadow: 0 0 5px rgba(253, 48, 2, 0.3);
+font-size: 1.5rem;
+}
+
+.icon {
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.8em; /* увеличенный размер */
+}

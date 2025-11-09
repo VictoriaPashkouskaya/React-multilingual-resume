@@ -1,0 +1,76 @@
+{
+  "header": {
+    "intro": "Informatika teknikaria esperientziarekin ",
+    "systems": "Windows eta Linux sistemetan",
+    "skills_intro": "Ezagutza hauek ditu: ",
+    "skills_list": "HTML, CSS, JavaScript, React",
+    "version_control": " eta bertsio-kontrol sistemetan ",
+    "git": "Git, GitHub",
+    "expertise_intro": "Gaitasunak ditu ",
+    "expertise_list": "laguntza teknikoan, dokumentu digitalen kudeaketan, hardware eta periferikoen mantentze-lanetan, eta aurkezpen profesionalak sortzen PowerPoint, Canva eta Figma erabiliz.",
+    "focus": "Arazoak konpontzera, sistemaren errendimendua hobetzeko eta erabiltzaileen arreta eskaintzera bideratua."
+  },
+  "selectLanguage": "Hautatu nahiago duzun hizkuntza",
+  "contacts": {
+    "title": "Kontaktua",
+    "email": "Posta elektronikoa",
+    "phone": "Telefonoa",
+    "github": "GitHub"
+  },
+  "projects": {
+    "title": "Proiektuak",
+    "description1": "Proiektuaren 1 deskribapena",
+    "description2": "Proiektuaren 2 deskribapena"
+  },
+  "skills": {
+    "title": "Gaitasunak",
+    "categoryDigital": "Digitalak / Teknikoak",
+    "categorySocial": "Gizarte / Elkarreragileak",
+    "digital": {
+      "systems": "Sistema eragileak: Windows, Linux eta macOS instalazioa, konfigurazioa eta mantentzea.",
+      "office": "Ofimatika: Microsoft Office erabilera aurreratua (Word, Excel, PowerPoint, Access).",
+      "presentation": "Aurkezpen eta diseinu tresnak: PowerPoint, Canva, Figma; aurkezpen bisualak eta prototipoak sortzea.",
+      "googleTools": "Google Workspace tresnak: Drive, Gmail, Calendar, Meet, Keep, Docs.",
+      "hardware": "Hardwarea: diagnostikoa, garbiketa, muntaketa, ekipamenduaren mantentzea eta osagaiak instalatzea.",
+      "peripherals": "Periferikoak: inprimagailu, eskaneatzaile eta kanpoko gailuen oinarrizko konfigurazioa eta mantentzea.",
+      "docs": "Dokumentuen kudeaketa: antolaketa eta artxibatze digitalean, bertsio kontrola, hodeiko biltegiratzea.",
+      "networks": "Sareak: TCP/IP, DHCP, DNS, VPN, router eta switchen oinarrizko ezagutzak.",
+      "security": "Segurtasun informatikoa: datuen babesa, segurtasun kopiak, sarbide baimen kudeaketa.",
+      "webDev": "Web garapena: HTML5, CSS3, JavaScript, React, Bootstrap, erantzunkizuneko diseinua.",
+      "git": "Bertsio kontrola: Git, GitHub, GitLab.",
+      "databases": "Datu baseak: MySQL, MongoDB oinarrizko ezagutza.",
+      "virtualization": "Birtualizazioa: VMware eta VirtualBox esperientzia.",
+      "support": "Laguntza teknikoa: arazoen konponbidea, urruneko laguntza, barne bezeroen zerbitzua.",
+      "projectManagement": "Proiektu kudeaketa: Trello, Jira erabilera zereginak planifikatzeko eta jarraipena egiteko.",
+      "teamwork": "Komunikazioa eta talde lana: erabiltzaileekin eta teknikako sailen arteko koordinazioa."
+    },
+    "social": {
+      "teamwork": "Talde-lana eta lankidetza ikasketa eta lan proiektuetan.",
+      "leadership": "Lidergoa eta zereginak koordinatzea.",
+      "communication": "Komunikazio argia eta eraginkorra.",
+      "problemSolving": "Arazoak konpontzea eta gertakariak aztertzea.",
+      "planning": "Proiektu eta jardueren planifikazioa eta antolaketa."
+    }
+  },
+  "menu": {
+    "languages": "Hizkuntzak",
+    "aboutMe": "Ni buruz",
+    "skills": "Gaitasunak",
+    "education": "Hezkuntza",
+    "experience": "Esperientzia",
+    "history": "Nire historia"
+  },
+  "languages": {
+    "spanish": "Gaztelania",
+    "basque": "Euskara",
+    "english": "Ingelesa",
+    "ukrainian": "Ukrainiera",
+    "russian": "Errusiera",
+    "learningBasque": "Ikasten",
+    "learningEnglish": "Ikasten"
+  },
+  "En": "EN",
+  "Ru": "RU",
+  "ES": "ES",
+  "EU": "EU"
+}

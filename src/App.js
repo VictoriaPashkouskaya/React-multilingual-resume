@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -7,7 +6,6 @@ import Projects from './components/Projects';
 import LanguageSelector from './components/LanguageSelector';
 import LanguageSelectionPage from './components/LanguageSelectionPage';
 import InteractiveMenu from './components/InteractiveMenu';
-import Languages from './components/Languages';
 
 const AppWrapper = styled.div`
   max-width: 800px;

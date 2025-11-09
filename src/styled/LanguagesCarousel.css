@@ -1,0 +1,121 @@
+/* === LanguagesCarousel.css === */
+
+/* Glow animation for "learning" cards */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Section title */
+.languages-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Carousel container */
+.carousel-wrapper {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Navigation arrows */
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #111;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.arrow:hover {
+  color: #0ff;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* Card container */
+.card-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.card-list {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Individual card */
+.card {
+  flex: 0 0 auto;
+  width: 220px;
+  margin: 0 10px;
+  background: linear-gradient(145deg, #ffffff, #e9ecef);
+  border-radius: 14px;
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow:
+    6px 6px 14px rgba(0, 0, 0, 0.12),
+    -6px -6px 14px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow:
+    8px 8px 18px rgba(0, 0, 0, 0.18),
+    -8px -8px 18px rgba(255, 255, 255, 0.9);
+}
+
+/* Glow for learning languages */
+.card.learning {
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Flag wrapper */
+.flag-wrapper {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.flag-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Language name */
+.language-name {
+  margin: 0.5rem 0 0.3rem 0;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+/* Language level text */
+.language-level {
+  margin: 0;
+  color: #555;
+  font-weight: 500;
+}
