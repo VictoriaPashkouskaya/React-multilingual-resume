@@ -1,148 +1,134 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import styled, { keyframes } from "styled-components";
-import logoImg from "../img/Captura_de_pantalla_2025-10-26_102258-removebg-preview.png";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import styled, { keyframes } from 'styled-components';
+import logoImg from '../img/Captura_de_pantalla_2025-10-26_102258-removebg-preview.png';
 
 const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const glow = keyframes`
-  0%, 100% { filter: drop-shadow(0 0 10px #ffd70088); }
-  50% { filter: drop-shadow(0 0 30px #ffffffdd); }
+const Wrapper = styled.main`
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgba(99, 102, 241, 0.2), transparent 34%),
+    linear-gradient(135deg, #0b1020, #131a33 60%, #1b2a4b);
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: radial-gradient(circle at 30% 20%, #3a1c71, #120b24 90%);
-  padding: 20px;
+const Card = styled.section`
+  width: min(920px, 100%);
+  border-radius: 24px;
+  padding: 28px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
 `;
 
 const Logo = styled.img`
-  width: 150px;
+  width: 138px;
   height: auto;
-  animation: ${glow} 4s infinite ease-in-out;
-  margin-bottom: 2.5rem;
-
-  @media (max-width: 480px) {
-    width: 100px;
-  }
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 10px 24px rgba(56, 189, 248, 0.35));
 `;
 
 const Title = styled.h1`
-  font-size: 3.8rem;
-  font-weight: 800;
-  color: #ffffff;
-  text-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
-  animation: ${fadeIn} 0.8s ease forwards;
-
-  @media (max-width: 480px) {
-    font-size: 2.4rem;
-  }
-`;
-
-const Description = styled.p`
-  font-size: 1.25rem;
-  color: #f5e9ff;
-  text-align: center;
-  max-width: 600px;
-  opacity: 0.9;
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
-  animation: ${fadeIn} 1.2s ease forwards;
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
-`;
-
-const Button = styled.button`
-  position: relative;
-  margin: 12px;
-  padding: 16px 48px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
+  margin: 0;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  animation: ${fadeIn} 0.45s ease forwards;
+`;
 
-  background: linear-gradient(
-    135deg,
-    ${({ c1 }) => c1},
-    ${({ c2 }) => c2}
-  );
+const Subtitle = styled.p`
+  margin: 12px auto 6px;
+  color: #dbeafe;
+  max-width: 720px;
+  font-size: clamp(1rem, 2.5vw, 1.18rem);
+  line-height: 1.5;
+  animation: ${fadeIn} 0.55s ease forwards;
+`;
 
-  box-shadow:
-    inset 0 1px 4px rgba(255, 255, 255, 0.4),
-    0 10px 25px rgba(0,0,0,0.4),
-    0 0 18px rgba(255, 215, 0, 0.25);
+const Helper = styled.p`
+  margin: 0 auto 24px;
+  color: #bfdbfe;
+  font-size: 0.98rem;
+  animation: ${fadeIn} 0.65s ease forwards;
+`;
 
-  transition: all 0.45s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+const ButtonsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const LanguageButton = styled.button`
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #f8fafc;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.45), rgba(99, 102, 241, 0.35));
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 
   &:hover {
-    transform: translateY(-6px) scale(1.08);
-    box-shadow:
-      inset 0 1px 5px rgba(255,255,255,0.6),
-      0 18px 40px rgba(0,0,0,0.55),
-      0 0 28px rgba(255, 215, 0, 0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(30, 64, 175, 0.35);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.58), rgba(99, 102, 241, 0.48));
   }
 
-  &:active {
-    transform: scale(0.97);
-    box-shadow:
-      inset 0 2px 6px rgba(0,0,0,0.4),
-      0 6px 18px rgba(0,0,0,0.4);
-  }
-
-  @media (max-width: 480px) {
-    width: 85%;
-    padding: 14px 0;
-    font-size: 1.1rem;
+  &:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 3px;
   }
 `;
 
 const LanguageSelectionPage = () => {
   const navigate = useNavigate();
-  const { i18n } = useTranslation(); // подключаем i18n
+  const { i18n, t } = useTranslation();
+
+  const languageOptions = [
+    { code: 'en', label: 'English' },
+    { code: 'ru', label: 'Русский' },
+    { code: 'es', label: 'Español' },
+    { code: 'eu', label: 'Euskara' },
+  ];
 
   const selectLanguage = (lang) => {
-    i18n.changeLanguage(lang); // меняем язык
-    localStorage.setItem("language", lang);
-    navigate("/resume"); // переходим на резюме
+    i18n.changeLanguage(lang);
+    localStorage.setItem('language', lang);
+    navigate('/resume');
   };
 
   return (
-
     <Wrapper>
-      <Logo src={logoImg} alt="Logo" />
-      <Title>CV Viktoria</Title>
-      <Description>
-        Welcome! / Добро пожаловать! / ¡Bienvenido! / Ongi etorri! <br />
-        Select your preferred language:
-      </Description>
+      <Card>
+        <Logo src={logoImg} alt="Logo" />
+        <Title>CV Viktoria</Title>
+        <Subtitle>{t('landing.tagline')}</Subtitle>
+        <Helper>{t('selectLanguage')}</Helper>
 
-      <Button c1="#FF416C" c2="#FF4B2B" onClick={() => selectLanguage("en")}>
-        English
-      </Button>
-      <Button c1="#1D4350" c2="#A43931" onClick={() => selectLanguage("ru")}>
-        Русский
-      </Button>
-      <Button c1="#FFB75E" c2="#ED8F03" onClick={() => selectLanguage("es")}>
-        Español
-      </Button>
-      <Button c1="#6A82FB" c2="#FC5C7D" onClick={() => selectLanguage("eu")}>
-        Euskara
-      </Button>
+        <ButtonsGrid>
+          {languageOptions.map((option) => (
+            <LanguageButton key={option.code} onClick={() => selectLanguage(option.code)}>
+              {option.label}
+            </LanguageButton>
+          ))}
+        </ButtonsGrid>
+      </Card>
     </Wrapper>
   );
 };

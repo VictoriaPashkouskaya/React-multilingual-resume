@@ -7,20 +7,35 @@ import LanguageSelector from './components/LanguageSelector';
 import LanguageSelectionPage from './components/LanguageSelectionPage';
 import InteractiveMenu from './components/InteractiveMenu';
 
+const ResumeBackground = styled.div`
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(98, 0, 238, 0.25), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(0, 188, 212, 0.2), transparent 30%),
+    linear-gradient(135deg, #0f1020 0%, #161b33 50%, #1a2342 100%);
+`;
+
 const AppWrapper = styled.div`
-  max-width: 800px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
 `;
 
 const Resume = () => (
-  <AppWrapper>
-    <LanguageSelector />
-    <Contacts />
-    <InteractiveMenu/>
-    <Projects />
-  </AppWrapper>
+  <ResumeBackground>
+    <AppWrapper>
+      <LanguageSelector />
+      <Contacts />
+      <InteractiveMenu />
+      <Projects />
+    </AppWrapper>
+  </ResumeBackground>
 );
 
 const App = () => (
@@ -33,5 +48,3 @@ const App = () => (
 );
 
 export default App;
-
-

@@ -72,5 +72,8 @@
   "En": "EN",
   "Ru": "RU",
   "ES": "ES",
-  "EU": "EU"
+  "EU": "EU",
+  "landing": {
+    "tagline": "Currículum multilingüe profesional para roles de soporte IT y front-end."
+  }
 }

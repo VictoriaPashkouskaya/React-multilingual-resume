@@ -72,5 +72,8 @@
   "En": "EN",
   "Ru": "RU",
   "ES": "ES",
-  "EU": "EU"
+  "EU": "EU",
+  "landing": {
+    "tagline": "IT laguntza eta front-end lanpostuetarako curriculum eleaniztun profesionala."
+  }
 }

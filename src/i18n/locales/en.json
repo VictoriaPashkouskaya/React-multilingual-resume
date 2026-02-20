@@ -72,5 +72,8 @@
   "En": "EN",
   "Ru": "RU",
   "ES": "ES",
-  "EU": "EU"
+  "EU": "EU",
+  "landing": {
+    "tagline": "Professional multilingual resume for IT support and front-end roles."
+  }
 }
