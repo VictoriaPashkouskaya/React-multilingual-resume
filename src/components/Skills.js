@@ -1,104 +1,104 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled, { keyframes } from 'styled-components';
-import { FaLaptopCode, FaUsers, FaTools, FaDatabase, FaServer, FaProjectDiagram } from 'react-icons/fa';
+import styled from 'styled-components';
+import { FaLaptopCode, FaUsers, FaCheckCircle } from 'react-icons/fa';
 
-const float = keyframes`
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
+const Wrapper = styled.section`
+  margin-top: 20px;
 `;
 
-const CarouselWrapper = styled.div`
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 20px;
-  scroll-behavior: smooth;
+const Title = styled.h2`
+  text-align: center;
+  margin: 0 0 14px;
+  color: #e2e8f0;
+  font-size: 1.6rem;
+`;
 
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #ffa500;
-    border-radius: 4px;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
   }
 `;
 
-const SkillCard = styled.div`
-  flex: 0 0 220px;
-  background: ${({ type }) => (type === 'digital' ? '#FFE9D1' : '#D9ECFF')};
-  color: ${({ type }) => (type === 'digital' ? '#C95C11' : '#0056B3')};
-  padding: 16px 20px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+const Column = styled.article`
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.18);
+`;
+
+const ColumnTitle = styled.h3`
+  margin: 0 0 10px;
+  color: #1e3a8a;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1rem;
-  white-space: normal;
-  line-height: 1.3;
-  min-height: 60px;
-
-  svg {
-    font-size: 1.3rem;
-    animation: ${float} 3s ease-in-out infinite;
-    flex-shrink: 0;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: 0.3s;
-  }
+  gap: 8px;
 `;
 
-const skillIcons = {
-  "Sistemas operativos": <FaLaptopCode />,
-  "Ofimática avanzada": <FaLaptopCode />,
-  "Presentación y diseño": <FaLaptopCode />,
-  "Google Workspace": <FaLaptopCode />,
-  "Hardware": <FaTools />,
-  "Periféricos": <FaTools />,
-  "Gestión documental": <FaDatabase />,
-  "Redes": <FaTools />,
-  "Seguridad informática": <FaServer />,
-  "Desarrollo web": <FaLaptopCode />,
-  "Control de versiones": <FaProjectDiagram />,
-  "Bases de datos": <FaDatabase />,
-  "Virtualización": <FaServer />,
-  "Soporte técnico": <FaTools />,
-  "Gestión de proyectos": <FaProjectDiagram />,
-  "Trabajo в equipo": <FaUsers />,
-  "Liderazgo": <FaUsers />,
-  "Comunicación": <FaUsers />,
-  "Resolución de problemas": <FaUsers />,
-};
+const SkillList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`;
+
+const SkillItem = styled.li`
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  color: #334155;
+  line-height: 1.45;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+
+  svg {
+    margin-top: 3px;
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+`;
 
 const Skills = () => {
   const { t } = useTranslation();
   const digital = Object.values(t('skills.digital', { returnObjects: true }));
   const social = Object.values(t('skills.social', { returnObjects: true }));
-  const allSkills = [...digital, ...social];
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <h2 style={{ color: '#ff8c42', fontWeight: '800', marginBottom: '20px' }}>
-        {t('skills.title')}
-      </h2>
+    <Wrapper>
+      <Title>{t('skills.title')}</Title>
+      <Grid>
+        <Column>
+          <ColumnTitle>
+            <FaLaptopCode /> {t('skills.categoryDigital')}
+          </ColumnTitle>
+          <SkillList>
+            {digital.map((skill, index) => (
+              <SkillItem key={index}>
+                <FaCheckCircle />
+                <span>{skill}</span>
+              </SkillItem>
+            ))}
+          </SkillList>
+        </Column>
 
-      <CarouselWrapper>
-        {allSkills.map((skill, index) => (
-          <SkillCard
-            key={index}
-            type={digital.includes(skill) ? 'digital' : 'social'}
-          >
-            {skillIcons[skill] || <FaTools />} {skill}
-          </SkillCard>
-        ))}
-      </CarouselWrapper>
-    </div>
+        <Column>
+          <ColumnTitle>
+            <FaUsers /> {t('skills.categorySocial')}
+          </ColumnTitle>
+          <SkillList>
+            {social.map((skill, index) => (
+              <SkillItem key={index}>
+                <FaCheckCircle />
+                <span>{skill}</span>
+              </SkillItem>
+            ))}
+          </SkillList>
+        </Column>
+      </Grid>
+    </Wrapper>
   );
 };
 

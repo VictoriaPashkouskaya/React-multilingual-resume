@@ -1,25 +1,16 @@
-/* === LanguagesCarousel.css === */
-
-/* Glow animation for "learning" cards */
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 14px rgba(0, 255, 255, 0.8);
-  }
+@keyframes pulseBorder {
+  0%, 100% { box-shadow: 0 0 0 rgba(14, 165, 233, 0); }
+  50% { box-shadow: 0 0 18px rgba(14, 165, 233, 0.35); }
 }
 
-/* Section title */
 .languages-title {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #111;
+  font-size: 1.55rem;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Carousel container */
 .carousel-wrapper {
   max-width: 900px;
   margin: 0 auto 2rem;
@@ -29,20 +20,22 @@
   overflow: hidden;
 }
 
-/* Navigation arrows */
 .arrow {
-  background: none;
   border: none;
-  font-size: 2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.3rem;
   cursor: pointer;
-  color: #111;
+  color: #e2e8f0;
   margin: 0 10px;
-  transition: color 0.3s, transform 0.2s;
+  background: rgba(148, 163, 184, 0.22);
+  transition: transform 0.2s, background 0.2s;
 }
 
 .arrow:hover {
-  color: #0ff;
-  transform: scale(1.2);
+  background: rgba(56, 189, 248, 0.32);
+  transform: scale(1.06);
 }
 
 @media (max-width: 768px) {
@@ -51,7 +44,6 @@
   }
 }
 
-/* Card container */
 .card-wrapper {
   overflow: hidden;
   flex: 1;
@@ -62,42 +54,35 @@
   transition: transform 0.4s ease;
 }
 
-/* Individual card */
 .card {
   flex: 0 0 auto;
   width: 220px;
   margin: 0 10px;
-  background: linear-gradient(145deg, #ffffff, #e9ecef);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 255, 0.9));
   border-radius: 14px;
-  padding: 1.5rem 1.2rem;
+  padding: 1.2rem 1rem;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  box-shadow:
-    6px 6px 14px rgba(0, 0, 0, 0.12),
-    -6px -6px 14px rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow:
-    8px 8px 18px rgba(0, 0, 0, 0.18),
-    -8px -8px 18px rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
 }
 
-/* Glow for learning languages */
 .card.learning {
-  animation: glow 1.5s infinite alternate;
+  animation: pulseBorder 1.8s infinite;
 }
 
-/* Flag wrapper */
 .flag-wrapper {
   width: 3rem;
   height: 3rem;
   margin: 0 auto 0.5rem;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .flag-img {
@@ -106,16 +91,14 @@
   object-fit: cover;
 }
 
-/* Language name */
 .language-name {
   margin: 0.5rem 0 0.3rem 0;
-  font-size: 1.2rem;
-  color: #111;
+  font-size: 1.1rem;
+  color: #1e293b;
 }
 
-/* Language level text */
 .language-level {
   margin: 0;
-  color: #555;
-  font-weight: 500;
+  color: #334155;
+  font-weight: 600;
 }

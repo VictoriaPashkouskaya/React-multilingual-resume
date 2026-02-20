@@ -9,15 +9,15 @@ import InteractiveMenu from './components/InteractiveMenu';
 
 const ResumeBackground = styled.div`
   min-height: 100vh;
-  padding: 40px 20px 80px;
+  padding: 32px 18px 72px;
   background:
-    radial-gradient(circle at 10% 10%, rgba(98, 0, 238, 0.25), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(0, 188, 212, 0.2), transparent 30%),
+    radial-gradient(circle at 10% 10%, rgba(98, 0, 238, 0.26), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(0, 188, 212, 0.22), transparent 30%),
     linear-gradient(135deg, #0f1020 0%, #161b33 50%, #1a2342 100%);
 `;
 
 const AppWrapper = styled.div`
-  max-width: 980px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 24px;
   border-radius: 24px;
