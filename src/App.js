@@ -9,22 +9,25 @@ import InteractiveMenu from './components/InteractiveMenu';
 
 const ResumeBackground = styled.div`
   min-height: 100vh;
-  padding: 32px 18px 72px;
+  padding: 34px 18px 80px;
   background:
-    radial-gradient(circle at 10% 10%, rgba(98, 0, 238, 0.26), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(0, 188, 212, 0.22), transparent 30%),
-    linear-gradient(135deg, #0f1020 0%, #161b33 50%, #1a2342 100%);
+    radial-gradient(circle at 8% 8%, rgba(236, 72, 153, 0.26), transparent 34%),
+    radial-gradient(circle at 92% 12%, rgba(34, 211, 238, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.16), transparent 40%),
+    linear-gradient(130deg, #0b1020 0%, #121a33 46%, #1d2551 100%);
 `;
 
 const AppWrapper = styled.div`
-  max-width: 1020px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding: 24px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(16px);
+  padding: 26px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
 `;
 
 const Resume = () => (
