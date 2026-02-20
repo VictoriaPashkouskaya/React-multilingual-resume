@@ -15,12 +15,32 @@
     "title": "Contacts",
     "email": "Email",
     "phone": "Phone",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "projects": {
     "title": "Projects",
-    "description1": "Project 1 description",
-    "description2": "Project 2 description"
+    "items": [
+      {
+        "name": "Multilingual Resume App",
+        "description": "Personal CV app in 4 languages built with React, JSON and Vercel deployment.",
+        "link": "https://react-multilingual-resume.vercel.app",
+        "linkLabel": "Live project"
+      },
+      {
+        "name": "Weather App",
+        "description": "React weather application consuming an external API for real-time conditions.",
+        "link": "https://github.com/VictoriaPashkouskaya/Project-Weather-App",
+        "linkLabel": "GitHub repository"
+      },
+      {
+        "name": "More projects",
+        "description": "Additional repositories and experiments.",
+        "link": "https://github.com/VictoriaPashkouskaya?tab=repositories",
+        "linkLabel": "View all repositories"
+      }
+    ]
   },
   "skills": {
     "title": "Skills",
@@ -75,5 +95,89 @@
   "EU": "EU",
   "landing": {
     "tagline": "Professional multilingual resume for IT support and front-end roles."
+  },
+  "profile": {
+    "name": "Victoria Pashkouskaya",
+    "location": "Barakaldo, Spain",
+    "role": "IT Support & Junior Front-End Developer",
+    "summary": "IT technician with hands-on experience in systems, hardware support and web development with React."
+  },
+  "professional": {
+    "title": "Professional Profile",
+    "intro": "IT technician with experience in Windows/Linux administration, technical support and basic networking, combined with front-end development skills in HTML, CSS, JavaScript and React.",
+    "highlights": [
+      "Windows / Linux / macOS",
+      "TCP/IP, DHCP, DNS, VPN",
+      "React, JavaScript, Bootstrap",
+      "Git, GitHub, GitLab",
+      "MySQL, MongoDB, Docker"
+    ]
+  },
+  "history": {
+    "title": "Personal Strengths",
+    "summary": "My background as an agronomist engineer and entrepreneur strengthened my leadership and operational mindset.",
+    "points": [
+      "Teamwork and collaboration",
+      "Clear communication",
+      "Problem solving",
+      "Planning and organization",
+      "Leadership and responsibility",
+      "Adaptability and continuous learning"
+    ]
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "role": "Full Stack Academic Project",
+        "company": "The Bridge Digital Talent Accelerator / Kutxabank, Bilbao",
+        "period": "2024",
+        "details": [
+          "Developed SPA features with React for the project “Salud Financiera”.",
+          "Collaborated with GitHub and agile teamwork practices."
+        ]
+      },
+      {
+        "role": "IT Repair Internship Technician",
+        "company": "ZC Computer SL, Barakaldo",
+        "period": "Jan 2024",
+        "details": [
+          "OS reinstallation, software setup and diagnostics for client devices.",
+          "Provided technical support and troubleshooting workflows."
+        ]
+      },
+      {
+        "role": "Project Management Lead",
+        "company": "Management Housing Company No.1, Novovolynsk (Ukraine)",
+        "period": "2020 – 2022",
+        "details": [
+          "Coordinated operational teams and project timelines.",
+          "Managed incidents, technical documentation and client communication."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "program": "Vocational Training – Microcomputer Systems and Networks",
+        "school": "FP Santurtzi LH, Santurtzi",
+        "period": "2025 – 2027",
+        "details": "Installation, configuration and maintenance of systems and networks (ETHAZI methodology)."
+      },
+      {
+        "program": "Professional Certificate Level 2 – Microcomputer Systems",
+        "school": "Meatze, Barakaldo",
+        "period": "2024",
+        "details": "580-hour technical program focused on support and systems maintenance."
+      },
+      {
+        "program": "Full Stack Web Development Bootcamp",
+        "school": "The Bridge Digital Talent Accelerator, Bilbao",
+        "period": "2024",
+        "details": "React, JavaScript, MERN stack, teamwork and project delivery."
+      }
+    ]
   }
 }

@@ -61,7 +61,27 @@
 .title {
   color: #1d4ed8;
   font-size: 1.9rem;
-  margin: 0 0 14px 0;
+  margin: 0 0 6px 0;
+}
+
+.contact-role {
+  margin: 0;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.contact-location {
+  margin: 6px 0 8px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-summary {
+  margin: 0 0 14px;
+  color: #334155;
+  line-height: 1.5;
 }
 
 .contact-icons {

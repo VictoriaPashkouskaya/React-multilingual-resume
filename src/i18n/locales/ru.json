@@ -13,14 +13,34 @@
   "selectLanguage": "Выберите предпочитаемый язык",
   "contacts": {
     "title": "Контакты",
-    "email": "Эл. почта",
+    "email": "Почта",
     "phone": "Телефон",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "projects": {
     "title": "Проекты",
-    "description1": "Описание проекта 1",
-    "description2": "Описание проекта 2"
+    "items": [
+      {
+        "name": "Мультиязычное CV-приложение",
+        "description": "Личное приложение-резюме на 4 языках, React + JSON + Vercel.",
+        "link": "https://react-multilingual-resume.vercel.app",
+        "linkLabel": "Открыть проект"
+      },
+      {
+        "name": "Погодное приложение",
+        "description": "React-приложение с API для отображения текущей погоды.",
+        "link": "https://github.com/VictoriaPashkouskaya/Project-Weather-App",
+        "linkLabel": "Репозиторий GitHub"
+      },
+      {
+        "name": "Другие проекты",
+        "description": "Дополнительные репозитории и практические работы.",
+        "link": "https://github.com/VictoriaPashkouskaya?tab=repositories",
+        "linkLabel": "Все репозитории"
+      }
+    ]
   },
   "skills": {
     "title": "Навыки",
@@ -75,5 +95,89 @@
   "EU": "EU",
   "landing": {
     "tagline": "Профессиональное многоязычное резюме для позиций в IT-поддержке и front-end."
+  },
+  "profile": {
+    "name": "Victoria Pashkouskaya",
+    "location": "Баракальдо, Испания",
+    "role": "IT-специалист и Junior Front-End разработчик",
+    "summary": "Технический специалист с опытом в системном администрировании, поддержке оборудования и веб-разработке на React."
+  },
+  "professional": {
+    "title": "Профессиональный профиль",
+    "intro": "IT-специалист с опытом установки, настройки и обслуживания Windows/Linux, технической поддержки и базовых сетей, а также веб-разработки на HTML, CSS, JavaScript и React.",
+    "highlights": [
+      "Windows / Linux / macOS",
+      "TCP/IP, DHCP, DNS, VPN",
+      "React, JavaScript, Bootstrap",
+      "Git, GitHub, GitLab",
+      "MySQL, MongoDB, Docker"
+    ]
+  },
+  "history": {
+    "title": "Личные компетенции",
+    "summary": "Опыт работы инженером-агрономом и предпринимателем усилил мои лидерские и организационные навыки.",
+    "points": [
+      "Командная работа и сотрудничество",
+      "Чёткая коммуникация",
+      "Решение проблем",
+      "Планирование и организация",
+      "Лидерство и ответственность",
+      "Гибкость и постоянное обучение"
+    ]
+  },
+  "experience": {
+    "title": "Опыт работы",
+    "items": [
+      {
+        "role": "Академический Full Stack проект",
+        "company": "The Bridge Digital Talent Accelerator / Kutxabank, Бильбао",
+        "period": "2024",
+        "details": [
+          "Разработка SPA-функциональности на React для проекта “Salud Financiera”.",
+          "Работа с GitHub и agile-подходом в команде."
+        ]
+      },
+      {
+        "role": "Стажировка – ремонт компьютеров",
+        "company": "ZC Computer SL, Баракальдо",
+        "period": "Янв 2024",
+        "details": [
+          "Переустановка ОС, настройка ПО и диагностика оборудования.",
+          "Техническая поддержка и устранение инцидентов."
+        ]
+      },
+      {
+        "role": "Руководитель проектов",
+        "company": "Management Housing Company No.1, Нововолынск (Украина)",
+        "period": "2020 – 2022",
+        "details": [
+          "Координация команд и операционных процессов.",
+          "Контроль технической документации и взаимодействие с клиентами."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Образование",
+    "items": [
+      {
+        "program": "Среднее проф. образование – Микрокомпьютерные системы и сети",
+        "school": "FP Santurtzi LH, Сантурци",
+        "period": "2025 – 2027",
+        "details": "Установка, настройка и обслуживание систем и сетей (методология ETHAZI)."
+      },
+      {
+        "program": "Проф. сертификат уровня 2 – Микрокомпьютерные системы",
+        "school": "Meatze, Баракальдо",
+        "period": "2024",
+        "details": "Программа 580 часов по технической поддержке и обслуживанию."
+      },
+      {
+        "program": "Курс Full Stack Web Development",
+        "school": "The Bridge Digital Talent Accelerator, Бильбао",
+        "period": "2024",
+        "details": "Практика по React, JavaScript, MERN и командной разработке."
+      }
+    ]
   }
 }

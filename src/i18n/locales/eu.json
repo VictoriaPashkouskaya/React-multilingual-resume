@@ -12,15 +12,35 @@
   },
   "selectLanguage": "Hautatu nahiago duzun hizkuntza",
   "contacts": {
-    "title": "Kontaktua",
-    "email": "Posta elektronikoa",
+    "title": "Kontaktuak",
+    "email": "Posta",
     "phone": "Telefonoa",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "projects": {
     "title": "Proiektuak",
-    "description1": "Proiektuaren 1 deskribapena",
-    "description2": "Proiektuaren 2 deskribapena"
+    "items": [
+      {
+        "name": "CV aplikazio eleaniztuna",
+        "description": "4 hizkuntzatako CV pertsonala React, JSON eta Vercel erabiliz.",
+        "link": "https://react-multilingual-resume.vercel.app",
+        "linkLabel": "Ikusi proiektua"
+      },
+      {
+        "name": "Eguraldi aplikazioa",
+        "description": "Kanpoko API batekin eguraldiaren egoera erakusten duen React aplikazioa.",
+        "link": "https://github.com/VictoriaPashkouskaya/Project-Weather-App",
+        "linkLabel": "GitHub errepositorioa"
+      },
+      {
+        "name": "Beste proiektu batzuk",
+        "description": "Beste errepositorio eta ariketa teknikoak.",
+        "link": "https://github.com/VictoriaPashkouskaya?tab=repositories",
+        "linkLabel": "Errepositorio guztiak"
+      }
+    ]
   },
   "skills": {
     "title": "Gaitasunak",
@@ -75,5 +95,89 @@
   "EU": "EU",
   "landing": {
     "tagline": "IT laguntza eta front-end lanpostuetarako curriculum eleaniztun profesionala."
+  },
+  "profile": {
+    "name": "Victoria Pashkouskaya",
+    "location": "Barakaldo, Espainia",
+    "role": "Informatika Teknikaria eta Front-End Junior",
+    "summary": "Sistema administrazioan, hardware laguntzan eta React bidezko web garapenean esperientzia duen informatika teknikaria."
+  },
+  "professional": {
+    "title": "Profil Profesionala",
+    "intro": "Windows/Linux instalazio, konfigurazio eta mantentze-lanetan esperientzia duen informatika teknikaria; baita laguntza teknikoa, oinarrizko sareak eta HTML, CSS, JavaScript eta React front-end garapena ere.",
+    "highlights": [
+      "Windows / Linux / macOS",
+      "TCP/IP, DHCP, DNS, VPN",
+      "React, JavaScript, Bootstrap",
+      "Git, GitHub, GitLab",
+      "MySQL, MongoDB, Docker"
+    ]
+  },
+  "history": {
+    "title": "Gaitasun Pertsonalak",
+    "summary": "Nire aurreko ibilbideak lidergoa, antolaketa eta ikuspegi praktikoa eman dizkit IT sektorerako.",
+    "points": [
+      "Talde lana eta lankidetza",
+      "Komunikazio argia",
+      "Arazoen konponketa",
+      "Antolaketa eta planifikazioa",
+      "Lidergoa eta erantzukizuna",
+      "Malgutasuna eta etengabeko ikaskuntza"
+    ]
+  },
+  "experience": {
+    "title": "Lan Esperientzia",
+    "items": [
+      {
+        "role": "Full Stack Proiektu Akademikoa",
+        "company": "The Bridge Digital Talent Accelerator / Kutxabank, Bilbo",
+        "period": "2024",
+        "details": [
+          "React bidezko SPA funtzionalitateak garatu ziren “Salud Financiera” proiektuan.",
+          "GitHub eta talde agile praktikak erabili ziren."
+        ]
+      },
+      {
+        "role": "Praktikak – Ordenagailuen konponketa teknikaria",
+        "company": "ZC Computer SL, Barakaldo",
+        "period": "Urt 2024",
+        "details": [
+          "SO berrinstalazioa, software konfigurazioa eta ekipamenduen diagnostikoa.",
+          "Erabiltzaileen intzidentzien laguntza teknikoa."
+        ]
+      },
+      {
+        "role": "Proiektu Kudeaketako Arduraduna",
+        "company": "Management Housing Company No.1, Novovolynsk (Ukraina)",
+        "period": "2020 – 2022",
+        "details": [
+          "Lantaldeen koordinazioa eta prozesuen antolaketa.",
+          "Dokumentazio teknikoaren kontrola eta bezeroekin komunikazioa."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Hezkuntza",
+    "items": [
+      {
+        "program": "Erdi Mailako LH – Sistema Mikroinformatikoak eta Sareak",
+        "school": "FP Santurtzi LH, Santurtzi",
+        "period": "2025 – 2027",
+        "details": "Sistema eta sareen instalazioa, konfigurazioa eta mantentzea (ETHAZI metodologia)."
+      },
+      {
+        "program": "2. Mailako Ziurtagiri Profesionala – Sistema Mikroinformatikoak",
+        "school": "Meatze, Barakaldo",
+        "period": "2024",
+        "details": "580 orduko programa laguntza teknikoan eta mantentze-lanetan."
+      },
+      {
+        "program": "Full Stack Web Garapena",
+        "school": "The Bridge Digital Talent Accelerator, Bilbo",
+        "period": "2024",
+        "details": "React, JavaScript, MERN eta talde-lan praktikoa."
+      }
+    ]
   }
 }

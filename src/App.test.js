@@ -25,6 +25,6 @@ describe('App routing flow', () => {
 
     expect(window.location.pathname).toBe('/resume');
     expect(localStorage.getItem('language')).toBe('en');
-    expect(screen.getByText(/contacts/i)).toBeInTheDocument();
+    expect(screen.getByText(/victoria pashkouskaya/i)).toBeInTheDocument();
   });
 });

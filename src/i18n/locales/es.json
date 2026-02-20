@@ -13,14 +13,34 @@
   "selectLanguage": "Seleccione su idioma preferido",
   "contacts": {
     "title": "Contactos",
-    "email": "Correo electrónico",
+    "email": "Correo",
     "phone": "Teléfono",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "projects": {
     "title": "Proyectos",
-    "description1": "Descripción del proyecto 1",
-    "description2": "Descripción del proyecto 2"
+    "items": [
+      {
+        "name": "Aplicación CV multilingüe",
+        "description": "Proyecto personal de CV en 4 idiomas con React, JSON y despliegue en Vercel.",
+        "link": "https://react-multilingual-resume.vercel.app",
+        "linkLabel": "Ver proyecto"
+      },
+      {
+        "name": "Aplicación del clima",
+        "description": "App React que usa API externa para mostrar el clima en tiempo real.",
+        "link": "https://github.com/VictoriaPashkouskaya/Project-Weather-App",
+        "linkLabel": "Repositorio en GitHub"
+      },
+      {
+        "name": "Más proyectos",
+        "description": "Otros repositorios y prácticas técnicas.",
+        "link": "https://github.com/VictoriaPashkouskaya?tab=repositories",
+        "linkLabel": "Ver todos los repositorios"
+      }
+    ]
   },
   "skills": {
     "title": "Competencias",
@@ -75,5 +95,89 @@
   "EU": "EU",
   "landing": {
     "tagline": "Currículum multilingüe profesional para roles de soporte IT y front-end."
+  },
+  "profile": {
+    "name": "Victoria Pashkouskaya",
+    "location": "Barakaldo, España",
+    "role": "Técnica en Informática & Front-End Junior",
+    "summary": "Técnica en informática con experiencia en sistemas, soporte de hardware y desarrollo web con React."
+  },
+  "professional": {
+    "title": "Perfil Profesional",
+    "intro": "Técnica en Informática con experiencia en instalación, configuración y mantenimiento de sistemas Windows/Linux, soporte técnico y redes básicas, junto con desarrollo front-end en HTML, CSS, JavaScript y React.",
+    "highlights": [
+      "Windows / Linux / macOS",
+      "TCP/IP, DHCP, DNS, VPN",
+      "React, JavaScript, Bootstrap",
+      "Git, GitHub, GitLab",
+      "MySQL, MongoDB, Docker"
+    ]
+  },
+  "history": {
+    "title": "Competencias Personales",
+    "summary": "Mi trayectoria como ingeniera agrónoma y emprendedora me aportó liderazgo, organización y visión práctica para el sector IT.",
+    "points": [
+      "Trabajo en equipo y colaboración",
+      "Comunicación clara y efectiva",
+      "Resolución de problemas",
+      "Organización y planificación",
+      "Liderazgo y responsabilidad",
+      "Adaptabilidad y aprendizaje continuo"
+    ]
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "items": [
+      {
+        "role": "Proyecto Académico Full Stack",
+        "company": "The Bridge Digital Talent Accelerator / Kutxabank, Bilbao",
+        "period": "2024",
+        "details": [
+          "Desarrollo de funcionalidades SPA con React para “Salud Financiera”.",
+          "Gestión de versiones con GitHub y trabajo en equipo ágil."
+        ]
+      },
+      {
+        "role": "Prácticas – Técnica en reparación de ordenadores",
+        "company": "ZC Computer SL, Barakaldo",
+        "period": "Ene 2024",
+        "details": [
+          "Reinstalación de SO, configuración de software y diagnóstico de equipos.",
+          "Soporte técnico y resolución de incidencias de usuarios."
+        ]
+      },
+      {
+        "role": "Responsable de Gestión de Proyectos",
+        "company": "Management Housing Company No.1, Novovolynsk (Ucrania)",
+        "period": "2020 – 2022",
+        "details": [
+          "Coordinación de equipos y planificación operativa.",
+          "Seguimiento de documentación técnica y comunicación con clientes."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formación Académica",
+    "items": [
+      {
+        "program": "FP Grado Medio – Sistemas Microinformáticos y Redes",
+        "school": "FP Santurtzi LH, Santurtzi",
+        "period": "2025 – 2027",
+        "details": "Instalación, configuración y mantenimiento de sistemas y redes con metodología ETHAZI."
+      },
+      {
+        "program": "Certificado Profesional Nivel 2 – Sistemas Microinformáticos",
+        "school": "Meatze, Barakaldo",
+        "period": "2024",
+        "details": "Programa de 580 horas orientado a soporte técnico y mantenimiento."
+      },
+      {
+        "program": "Desarrollo Web Full Stack",
+        "school": "The Bridge Digital Talent Accelerator, Bilbao",
+        "period": "2024",
+        "details": "Formación intensiva en React, JavaScript, MERN y trabajo colaborativo."
+      }
+    ]
   }
 }
